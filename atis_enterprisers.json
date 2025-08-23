@@ -1,0 +1,2571 @@
+[
+    {
+        "id": 36,
+        "name": "“Odlar Yurdu” Universiteti",
+        "ATIS_ID": "AT0071",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50003",
+            "IX50020",
+            "IX50021",
+            "IX50023",
+            "IX50025",
+            "IX50031",
+            "IX50035",
+            "IX50060",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50077",
+            "IX50082",
+            "IX50113",
+            "IX50137",
+            "IX50160",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 64,
+        "name": "1 nömrəli Bakı Tibb Kolleci",
+        "ATIS_ID": "OT0033",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40141",
+            "IX40142",
+            "IX40146"
+        ]
+    },
+    {
+        "id": 65,
+        "name": "2 nömrəli Bakı Baza Tibb Kolleci",
+        "ATIS_ID": "OT0036",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40139",
+            "IX40140",
+            "IX40141",
+            "IX40142",
+            "IX40144"
+        ]
+    },
+    {
+        "id": 44,
+        "name": "ADA Universiteti",
+        "ATIS_ID": "AT0046",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50034",
+            "IX50035",
+            "IX50038",
+            "IX50064",
+            "IX50069",
+            "IX50081",
+            "IX50113",
+            "IX50137"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "ADİU-nun Dərbənd filialı",
+        "ATIS_ID": "AT0006",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 8,
+        "name": "ADİU-nun Zaqatala filialı",
+        "ATIS_ID": "AT0007",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50137",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "ADPU-nun Ağcabədi filialı",
+        "ATIS_ID": "AT0009",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50005",
+            "IX50014",
+            "IX50018",
+            "IX50021"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "ADPU-nun Cəlilabad filialı",
+        "ATIS_ID": "AT0010",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50014",
+            "IX50018",
+            "IX50020"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "ADPU-nun Quba filialı",
+        "ATIS_ID": "AT0011",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50005",
+            "IX50014",
+            "IX50018",
+            "IX50020",
+            "IX50021"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "ADPU-nun Şamaxı filialı",
+        "ATIS_ID": "AT0012",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50005",
+            "IX50014",
+            "IX50018",
+            "IX50020"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "ADPU-nun Şəki filialı",
+        "ATIS_ID": "AT0013",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50005",
+            "IX50006",
+            "IX50014",
+            "IX50018",
+            "IX50020",
+            "IX50021"
+        ]
+    },
+    {
+        "id": 66,
+        "name": "Ağcabədi Pedaqoji Kolleci",
+        "ATIS_ID": "OT0112",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40003",
+            "IX40006",
+            "IX40008",
+            "IX40010",
+            "IX40090",
+            "IX40094",
+            "IX40128",
+            "IX40130",
+            "IX40134"
+        ]
+    },
+    {
+        "id": 67,
+        "name": "Ağdam Dövlət Sosial-İqtisadi Kolleci",
+        "ATIS_ID": "OT0114",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40003",
+            "IX40008",
+            "IX40010",
+            "IX40035",
+            "IX40056",
+            "IX40075",
+            "IX40080",
+            "IX40128",
+            "IX40130",
+            "IX40135"
+        ]
+    },
+    {
+        "id": 68,
+        "name": "Ağdam Musiqi Kolleci",
+        "ATIS_ID": "OT0113",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40016",
+            "IX40017",
+            "IX40019",
+            "IX40020",
+            "IX40023"
+        ]
+    },
+    {
+        "id": 69,
+        "name": "Ağdaş Dövlət Humanitar Kolleci",
+        "ATIS_ID": "OT0120",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40003",
+            "IX40006",
+            "IX40008",
+            "IX40010",
+            "IX40043"
+        ]
+    },
+    {
+        "id": 134,
+        "name": "Akademik C.M.Abdullayev adına Elmi-Tədqiqat Kardiologiya İnstitutu",
+        "ATIS_ID": "AT0132",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 158,
+        "name": "Akademik M.Cavadzadə adına Respublika Kliniki Uroloji Xəstəxanası",
+        "ATIS_ID": "AT0125",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 157,
+        "name": "Akademik M.Ə.Mirqasımov adına Respublika Klinik Xəstəxanası",
+        "ATIS_ID": "AT0133",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 126,
+        "name": "Akademik Zərifə Əliyeva adına Milli Oftalmologiya Mərkəzi",
+        "ATIS_ID": "AT0116",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 70,
+        "name": "Astara Pedaqoji Kolleci",
+        "ATIS_ID": "OT0135",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40010",
+            "IX40034",
+            "IX40124",
+            "IX40126",
+            "IX40128",
+            "IX40130",
+            "IX40134",
+            "IX40150"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Azərbaycan Dillər Universiteti",
+        "ATIS_ID": "AT0022",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50002",
+            "IX50003",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50023",
+            "IX50025",
+            "IX50026",
+            "IX50033",
+            "IX50035",
+            "IX60001",
+            "IX60002"
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Azərbaycan Dövlət Aqrar Universiteti",
+        "ATIS_ID": "AT0042",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50082",
+            "IX50094",
+            "IX50110",
+            "IX50113",
+            "IX50119",
+            "IX50124",
+            "IX50133",
+            "IX50137",
+            "IX50142",
+            "IX50143",
+            "IX50144",
+            "IX50145",
+            "IX50146",
+            "IX50147",
+            "IX50148",
+            "IX50149",
+            "IX50150",
+            "IX50151",
+            "IX50152",
+            "IX50153",
+            "IX50154",
+            "IX50249",
+            "IX50250"
+        ]
+    },
+    {
+        "id": 145,
+        "name": "Azərbaycan Dövlət Aqrar Universiteti nəzdində Gəncə Dövlət Aqrar Kolleci",
+        "ATIS_ID": "OT0150",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 47,
+        "name": "Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası",
+        "ATIS_ID": "AT0041",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50007",
+            "IX50161",
+            "IX50162",
+            "IX50163"
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Azərbaycan Dövlət Dəniz Akademiyası",
+        "ATIS_ID": "AT0050",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50100",
+            "IX50101",
+            "IX50102",
+            "IX50249"
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Azərbaycan Dövlət Dəniz Akademiyası nəzdində Azərbaycan Dənizçilik Kolleci",
+        "ATIS_ID": "OT0047",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40064",
+            "IX40065",
+            "IX40066"
+        ]
+    },
+    {
+        "id": 59,
+        "name": "Azərbaycan Dövlət Gömrük Komitəsinin Akademiyası",
+        "ATIS_ID": "AT0057",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50034",
+            "IX50064",
+            "IX50222",
+            "IX50257"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Azərbaycan Dövlət İqtisad Universiteti",
+        "ATIS_ID": "AT0005",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50060",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50066",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50081",
+            "IX50082",
+            "IX50083",
+            "IX50094",
+            "IX50124",
+            "IX50131",
+            "IX50137",
+            "IX50139",
+            "IX50160",
+            "IX50222",
+            "IX50249",
+            "IX50257",
+            "IX50261"
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Azərbaycan Dövlət İqtisad Universiteti nəzdində Azərbaycan Maliyyə-İqtisad Kolleci",
+        "ATIS_ID": "OT0001",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40039"
+        ]
+    },
+    {
+        "id": 86,
+        "name": "Azərbaycan Dövlət İqtisad Universitetinin nəzdində Qida Sənayesi Kolleci",
+        "ATIS_ID": "OT0008",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40003",
+            "IX40042",
+            "IX40112",
+            "IX40118",
+            "IX40119",
+            "IX40120",
+            "IX40121",
+            "IX40122",
+            "IX40124",
+            "IX40126",
+            "IX40153"
+        ]
+    },
+    {
+        "id": 83,
+        "name": "Azərbaycan Dövlət İqtisad Universitetinin nəzdində Sosial-İqtisadi Kollec",
+        "ATIS_ID": "OT0014",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40014",
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40092",
+            "IX40145"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti",
+        "ATIS_ID": "AT0024",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50009",
+            "IX50017",
+            "IX50032",
+            "IX50037",
+            "IX50040",
+            "IX50041",
+            "IX50042",
+            "IX50046",
+            "IX50050",
+            "IX50051",
+            "IX50053",
+            "IX50054",
+            "IX50056",
+            "IX50057",
+            "IX50058",
+            "IX50060",
+            "IX50160",
+            "IX50215",
+            "IX50220",
+            "IX50302",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 84,
+        "name": "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin nəzdində Humanitar Kollec",
+        "ATIS_ID": "OT0022",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40004",
+            "IX40006",
+            "IX40009",
+            "IX40010",
+            "IX40013",
+            "IX40015",
+            "IX40016",
+            "IX40017",
+            "IX40020",
+            "IX40023",
+            "IX40025",
+            "IX40028",
+            "IX40038",
+            "IX40145",
+            "IX40150"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Azərbaycan Dövlət Neft və Sənaye Universiteti",
+        "ATIS_ID": "AT0017",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50080",
+            "IX50081",
+            "IX50083",
+            "IX50084",
+            "IX50088",
+            "IX50094",
+            "IX50106",
+            "IX50109",
+            "IX50110",
+            "IX50111",
+            "IX50112",
+            "IX50113",
+            "IX50123",
+            "IX50124",
+            "IX50131",
+            "IX50133",
+            "IX50137",
+            "IX50139",
+            "IX50140",
+            "IX50249",
+            "IX50250",
+            "IX50257",
+            "IX50266",
+            "IX50272"
+        ]
+    },
+    {
+        "id": 73,
+        "name": "Azərbaycan Dövlət Neft və Sənaye Universitetinin nəzdində Bakı Neft-Energetika Kolleci",
+        "ATIS_ID": "OT0018",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40049",
+            "IX40051",
+            "IX40053",
+            "IX40055",
+            "IX40056",
+            "IX40057",
+            "IX40058",
+            "IX40126"
+        ]
+    },
+    {
+        "id": 85,
+        "name": "Azərbaycan Dövlət Neft və Sənaye Universitetinin nəzdində Sənaye və Texnologiya Kolleci",
+        "ATIS_ID": "OT0049",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40033",
+            "IX40034",
+            "IX40043",
+            "IX40089",
+            "IX40091",
+            "IX40092",
+            "IX40093",
+            "IX40094",
+            "IX40095",
+            "IX40110",
+            "IX40115",
+            "IX40126",
+            "IX40149",
+            "IX40158"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Azərbaycan Dövlət Pedaqoji Universiteti",
+        "ATIS_ID": "AT0008",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50007",
+            "IX50008",
+            "IX50009",
+            "IX50010",
+            "IX50011",
+            "IX50012",
+            "IX50013",
+            "IX50014",
+            "IX50015",
+            "IX50016",
+            "IX50017",
+            "IX50018",
+            "IX50019",
+            "IX50020",
+            "IX50021",
+            "IX50160",
+            "IX60001"
+        ]
+    },
+    {
+        "id": 74,
+        "name": "Azərbaycan Dövlət Pedaqoji Universitetinin nəzdində Azərbaycan Dövlət Pedaqoji Kolleci",
+        "ATIS_ID": "OT0019",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40003",
+            "IX40006",
+            "IX40008",
+            "IX40009",
+            "IX40010",
+            "IX40145"
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Azərbaycan Əmək və Sosial Münasibətlər Akademiyası",
+        "ATIS_ID": "AT0073",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50032",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50068",
+            "IX50070",
+            "IX50160"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Azərbaycan Fransız Universiteti",
+        "ATIS_ID": "AT0018",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50081",
+            "IX50084",
+            "IX50088",
+            "IX50123"
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Azərbaycan İlahiyyat İnstitutu",
+        "ATIS_ID": "AT0052",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50036",
+            "IX50039"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Azərbaycan Kooperasiya Universiteti",
+        "ATIS_ID": "AT0072",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50025",
+            "IX50031",
+            "IX50033",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50072",
+            "IX50078",
+            "IX50082",
+            "IX50083",
+            "IX50113",
+            "IX50124",
+            "IX50139",
+            "IX50153",
+            "IX50160",
+            "IX50222",
+            "IX50302",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Azərbaycan Memarlıq və İnşaat Universiteti",
+        "ATIS_ID": "AT0020",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50060",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50083",
+            "IX50088",
+            "IX50094",
+            "IX50110",
+            "IX50112",
+            "IX50115",
+            "IX50116",
+            "IX50118",
+            "IX50119",
+            "IX50122",
+            "IX50131",
+            "IX50133",
+            "IX50137",
+            "IX50139",
+            "IX50140",
+            "IX50141",
+            "IX50146",
+            "IX50249",
+            "IX50261",
+            "IX50274"
+        ]
+    },
+    {
+        "id": 75,
+        "name": "Azərbaycan Memarlıq və İnşaat Universitetinin nəzdində İnşaat Kolleci",
+        "ATIS_ID": "OT0058",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40033",
+            "IX40059",
+            "IX40094",
+            "IX40098",
+            "IX40100",
+            "IX40101",
+            "IX40103",
+            "IX40104",
+            "IX40105",
+            "IX40106",
+            "IX40107"
+        ]
+    },
+    {
+        "id": 123,
+        "name": "Azərbaycan Milli Elmlər Akademiyası",
+        "ATIS_ID": "AT0053",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 21,
+        "name": "Azərbaycan Milli Konservatoriyası",
+        "ATIS_ID": "AT0029",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50009",
+            "IX50042",
+            "IX50044",
+            "IX50045",
+            "IX50046",
+            "IX50215",
+            "IX50220"
+        ]
+    },
+    {
+        "id": 76,
+        "name": "Azərbaycan Milli Konservatoriyası nəzdində Musiqi Kolleci",
+        "ATIS_ID": "OT0032",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40016",
+            "IX40017",
+            "IX40018",
+            "IX40019",
+            "IX40020",
+            "IX40023"
+        ]
+    },
+    {
+        "id": 115,
+        "name": "Azərbaycan Milli Konservatoriyasının nəzdində Sumqayıt Musiqi Kolleci",
+        "ATIS_ID": "OT0085",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40016",
+            "IX40017",
+            "IX40018",
+            "IX40019",
+            "IX40020",
+            "IX40023"
+        ]
+    },
+    {
+        "id": 57,
+        "name": "Azərbaycan Respublikası Daxili İşlər Nazirliyinin Daxili Qoşunların Ali Hərbi Məktəbi",
+        "ATIS_ID": "AT0063",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50315"
+        ]
+    },
+    {
+        "id": 54,
+        "name": "Azərbaycan Respublikası Daxili İşlər Nazirliyinin Polis Akademiyası",
+        "ATIS_ID": "AT0060",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50034"
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Azərbaycan Respublikası Dövlət Sərhəd Xidmətinin Akademiyası",
+        "ATIS_ID": "AT0062",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 55,
+        "name": "Azərbaycan Respublikası Dövlət Təhlükəsizliyi Xidmətinin Heydər Əliyev adına Akademiyası",
+        "ATIS_ID": "AT0059",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 56,
+        "name": "Azərbaycan Respublikası Fövqəladə Hallar Nazirliyinin Akademiyası",
+        "ATIS_ID": "AT0061",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50132",
+            "IX50133"
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Azərbaycan Respublikası Prezidenti yanında Dövlət İdarəçilik Akademiyası",
+        "ATIS_ID": "AT0047",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50030",
+            "IX50034",
+            "IX50035",
+            "IX50038",
+            "IX50064",
+            "IX50067",
+            "IX50070",
+            "IX50072",
+            "IX50081"
+        ]
+    },
+    {
+        "id": 142,
+        "name": "Azərbaycan Respublikasının Dövlət Gömrük Komitəsinin Tibbi Xidmət İdarəsinin Mərkəzi Hospitalı",
+        "ATIS_ID": "AT0258",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 20,
+        "name": "Azərbaycan Rəssamlıq Akademiyası",
+        "ATIS_ID": "AT0026",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50017",
+            "IX50041",
+            "IX50051",
+            "IX50057",
+            "IX50058",
+            "IX50059",
+            "IX50060",
+            "IX50115"
+        ]
+    },
+    {
+        "id": 77,
+        "name": "Azərbaycan Rəssamlıq Akademiyası nəzdində İncəsənət Kolleci",
+        "ATIS_ID": "OT0031",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40025",
+            "IX40026",
+            "IX40029",
+            "IX40030",
+            "IX40031",
+            "IX40032",
+            "IX40033"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Azərbaycan Texniki Universiteti",
+        "ATIS_ID": "AT0019",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50081",
+            "IX50083",
+            "IX50093",
+            "IX50094",
+            "IX50106",
+            "IX50109",
+            "IX50110",
+            "IX50111",
+            "IX50112",
+            "IX50113",
+            "IX50123",
+            "IX50131",
+            "IX50133",
+            "IX50137",
+            "IX50139",
+            "IX50140",
+            "IX50158",
+            "IX50222",
+            "IX50249",
+            "IX50250",
+            "IX50257",
+            "IX50266",
+            "IX50272",
+            "IX50274",
+            "IX50308",
+            "IX50309",
+            "IX50310",
+            "IX50311",
+            "IX50313"
+        ]
+    },
+    {
+        "id": 78,
+        "name": "Azərbaycan Texniki Universitetinin nəzdində Bakı Dövlət Rabitə və Nəqliyyat Kolleci",
+        "ATIS_ID": "OT0045",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40070",
+            "IX40075",
+            "IX40080",
+            "IX40081",
+            "IX40082",
+            "IX40085",
+            "IX40088",
+            "IX40090",
+            "IX40091",
+            "IX40155"
+        ]
+    },
+    {
+        "id": 79,
+        "name": "Azərbaycan Texniki Universitetinin nəzdində Bakı Texniki Kolleci",
+        "ATIS_ID": "OT0017",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40072",
+            "IX40073",
+            "IX40074",
+            "IX40075",
+            "IX40076",
+            "IX40102",
+            "IX40155"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Azərbaycan Texnologiya Universiteti",
+        "ATIS_ID": "AT0036",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50060",
+            "IX50062",
+            "IX50064",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50082",
+            "IX50093",
+            "IX50109",
+            "IX50110",
+            "IX50113",
+            "IX50123",
+            "IX50124",
+            "IX50137",
+            "IX50139",
+            "IX50140",
+            "IX50153",
+            "IX50272",
+            "IX50274",
+            "IX50302",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 48,
+        "name": "Azərbaycan Tibb Universiteti",
+        "ATIS_ID": "AT0044",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50154",
+            "IX50167",
+            "IX50296",
+            "IX50301",
+            "IX50304",
+            "IX50305",
+            "IX50307",
+            "IX60155",
+            "IX60156",
+            "IX60157",
+            "IX60159",
+            "IX60160",
+            "IX60161"
+        ]
+    },
+    {
+        "id": 132,
+        "name": "Azərbaycan Tibb Universitetinin Hərbi Tibb Fakultəsi",
+        "ATIS_ID": "AT0124",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 42,
+        "name": "Azərbaycan Turizm və Menecment Universiteti",
+        "ATIS_ID": "AT0048",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50025",
+            "IX50035",
+            "IX50040",
+            "IX50062",
+            "IX50063",
+            "IX50067",
+            "IX50068",
+            "IX50124",
+            "IX50158",
+            "IX50160",
+            "IX50302",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Azərbaycan Universiteti",
+        "ATIS_ID": "AT0065",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50021",
+            "IX50023",
+            "IX50024",
+            "IX50025",
+            "IX50028",
+            "IX50030",
+            "IX50033",
+            "IX50040",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50113",
+            "IX50137",
+            "IX50160",
+            "IX50222",
+            "IX50302",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Bakı Ali Neft Məktəbi",
+        "ATIS_ID": "AT0049",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50088",
+            "IX50110",
+            "IX50123",
+            "IX50257"
+        ]
+    },
+    {
+        "id": 80,
+        "name": "Bakı Avrasiya Kolleci",
+        "ATIS_ID": "OT0147",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40038"
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Bakı Avrasiya Universiteti",
+        "ATIS_ID": "AT0070",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50023",
+            "IX50025",
+            "IX50033",
+            "IX50035",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50137",
+            "IX50160"
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Bakı Biznes Universiteti",
+        "ATIS_ID": "AT0067",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50025",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50137",
+            "IX50160",
+            "IX50222"
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Bakı Biznes və Kooperasiya Kolleci",
+        "ATIS_ID": "OT0016",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40014",
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40038",
+            "IX40042",
+            "IX40043",
+            "IX40044",
+            "IX40091",
+            "IX40094",
+            "IX40121",
+            "IX40150"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Bakı Dövlət Universiteti",
+        "ATIS_ID": "AT0001",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50002",
+            "IX50004",
+            "IX50006",
+            "IX50010",
+            "IX50011",
+            "IX50013",
+            "IX50015",
+            "IX50016",
+            "IX50019",
+            "IX50021",
+            "IX50023",
+            "IX50024",
+            "IX50025",
+            "IX50026",
+            "IX50028",
+            "IX50030",
+            "IX50031",
+            "IX50032",
+            "IX50033",
+            "IX50034",
+            "IX50035",
+            "IX50037",
+            "IX50038",
+            "IX50064",
+            "IX50067",
+            "IX50072",
+            "IX50073",
+            "IX50074",
+            "IX50075",
+            "IX50076",
+            "IX50077",
+            "IX50078",
+            "IX50079",
+            "IX50080",
+            "IX50081",
+            "IX50082",
+            "IX50084",
+            "IX50122",
+            "IX50123",
+            "IX50142",
+            "IX50146",
+            "IX50150",
+            "IX50160",
+            "IX50222",
+            "IX50233",
+            "IX50303",
+            "IX60001"
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Bakı Dövlət Universitetinin nəzdində İqtisadiyyat və Humanitar Kollec",
+        "ATIS_ID": "OT0043",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40008",
+            "IX40010",
+            "IX40013",
+            "IX40014",
+            "IX40034",
+            "IX40035",
+            "IX40037",
+            "IX40126"
+        ]
+    },
+    {
+        "id": 146,
+        "name": "Bakı İlahiyyat Kolleci",
+        "ATIS_ID": "OT0149",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 29,
+        "name": "Bakı Mühəndislik Universiteti",
+        "ATIS_ID": "AT0021",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50010",
+            "IX50011",
+            "IX50060",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50069",
+            "IX50070",
+            "IX50094",
+            "IX50109",
+            "IX50110",
+            "IX50112",
+            "IX50113",
+            "IX50115",
+            "IX50116",
+            "IX50118",
+            "IX50123",
+            "IX50131",
+            "IX50137",
+            "IX50139",
+            "IX50140",
+            "IX50141",
+            "IX50158",
+            "IX50249",
+            "IX50250",
+            "IX50257"
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Bakı Qızlar Universiteti",
+        "ATIS_ID": "AT0068",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50005",
+            "IX50013",
+            "IX50015",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50031"
+        ]
+    },
+    {
+        "id": 125,
+        "name": "Bakı Sağlamlıq Mərkəzi",
+        "ATIS_ID": "AT0152",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 155,
+        "name": "Bakı şəhər Kliniki Tibbi Mərkəzi",
+        "ATIS_ID": "AT0120",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 10,
+        "name": "Bakı Slavyan Universiteti",
+        "ATIS_ID": "AT0023",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50002",
+            "IX50003",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50023",
+            "IX50025",
+            "IX50026",
+            "IX50033",
+            "IX50035"
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Bakı Xoreoqrafiya Akademiyası",
+        "ATIS_ID": "AT0051",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50041",
+            "IX50042",
+            "IX50047"
+        ]
+    },
+    {
+        "id": 96,
+        "name": "Bakı Xoreoqrafiya Kolleci",
+        "ATIS_ID": "OT0059",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40004",
+            "IX40011",
+            "IX40021",
+            "IX40023"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "BDU-nun Qazax filialı",
+        "ATIS_ID": "AT0002",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50007",
+            "IX50012",
+            "IX50013",
+            "IX50014",
+            "IX50015",
+            "IX50016",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50023",
+            "IX50028",
+            "IX50160",
+            "IX50303",
+            "IX60001"
+        ]
+    },
+    {
+        "id": 87,
+        "name": "Bərdə Dövlət İdarəetmə və Texnologiya Kolleci",
+        "ATIS_ID": "OT0106",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40014",
+            "IX40034",
+            "IX40056",
+            "IX40073",
+            "IX40075",
+            "IX40080",
+            "IX40089",
+            "IX40091",
+            "IX40092",
+            "IX40093",
+            "IX40094",
+            "IX40095",
+            "IX40104",
+            "IX40110",
+            "IX40130",
+            "IX40132",
+            "IX40135",
+            "IX40149"
+        ]
+    },
+    {
+        "id": 88,
+        "name": "Cəlilabad Tibb Kolleci",
+        "ATIS_ID": "OT0137",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40142"
+        ]
+    },
+    {
+        "id": 135,
+        "name": "Elmi-Tədqiqat  Ağciyər Xəstəlikləri İnstitutu",
+        "ATIS_ID": "AT0134",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 130,
+        "name": "Elmi-tədqiqat Mamalıq və Ginekologiya İnstitutu",
+        "ATIS_ID": "AT0122",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 136,
+        "name": "Elmi-Tədqiqat Tibbi Bərpa İnstitutu",
+        "ATIS_ID": "AT0135",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 133,
+        "name": "Elmi-Tədqiqat Travmatologiya və Ortopediya İnstitutu",
+        "ATIS_ID": "AT0127",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 124,
+        "name": "Ə.Əliyev adına Həkimləri təkmilləşdirmə İnstitutu",
+        "ATIS_ID": "AT0054",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX60155",
+            "IX60156",
+            "IX60158",
+            "IX60161",
+            "IX60162"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Gəncə Dövlət Universiteti",
+        "ATIS_ID": "AT0031",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50007",
+            "IX50008",
+            "IX50009",
+            "IX50010",
+            "IX50011",
+            "IX50012",
+            "IX50013",
+            "IX50014",
+            "IX50015",
+            "IX50016",
+            "IX50017",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50023",
+            "IX50025",
+            "IX50028",
+            "IX50031",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50076",
+            "IX50077",
+            "IX50081",
+            "IX50131",
+            "IX50160",
+            "IX50161",
+            "IX50302",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 89,
+        "name": "Gəncə Dövlət Universitetinin nəzdində Regional Kollec",
+        "ATIS_ID": "OT0079",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40002",
+            "IX40004",
+            "IX40006",
+            "IX40008",
+            "IX40010",
+            "IX40034",
+            "IX40056",
+            "IX40060",
+            "IX40070",
+            "IX40073",
+            "IX40075",
+            "IX40085",
+            "IX40091",
+            "IX40130",
+            "IX40147"
+        ]
+    },
+    {
+        "id": 90,
+        "name": "Gəncə Musiqi Kolleci",
+        "ATIS_ID": "OT0074",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40004",
+            "IX40016",
+            "IX40017",
+            "IX40018",
+            "IX40019",
+            "IX40020",
+            "IX40023"
+        ]
+    },
+    {
+        "id": 120,
+        "name": "Gəncə Tibb Kolleci",
+        "ATIS_ID": "OT0075",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40139",
+            "IX40140",
+            "IX40141",
+            "IX40142",
+            "IX40144"
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Göyçay Dövlət İdarəetmə və Texnologiya Kolleci",
+        "ATIS_ID": "OT0117",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40035",
+            "IX40056",
+            "IX40073",
+            "IX40090",
+            "IX40115",
+            "IX40120",
+            "IX40128",
+            "IX40130",
+            "IX40132",
+            "IX40135",
+            "IX40155"
+        ]
+    },
+    {
+        "id": 53,
+        "name": "Heydər Əliyev adına Hərbi İnstitut",
+        "ATIS_ID": "AT0058",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 147,
+        "name": "Hərbi İdarəetmə İnstitutu",
+        "ATIS_ID": "AT0076",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 52,
+        "name": "İ.M.Seçenov adına Birinci Moskva Dövlət Tibb Universitetinin Bakı filialı",
+        "ATIS_ID": "AT0056",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50307"
+        ]
+    },
+    {
+        "id": 92,
+        "name": "İsmayıllı Dövlət Humanitar və Texnologiya Kolleci",
+        "ATIS_ID": "OT0122",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40010",
+            "IX40034",
+            "IX40091",
+            "IX40118",
+            "IX40119",
+            "IX40122",
+            "IX40130",
+            "IX40132",
+            "IX40134",
+            "IX40142",
+            "IX40149",
+            "IX40150"
+        ]
+    },
+    {
+        "id": 131,
+        "name": "K.Fərəcova adına Elmi-Tədqiqat Pediatriya İnstitutu",
+        "ATIS_ID": "AT0123",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 28,
+        "name": "Lənkəran Dövlət Universiteti",
+        "ATIS_ID": "AT0035",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50008",
+            "IX50009",
+            "IX50012",
+            "IX50013",
+            "IX50014",
+            "IX50015",
+            "IX50017",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50025",
+            "IX50040",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50068",
+            "IX50069",
+            "IX50082",
+            "IX50113",
+            "IX50124",
+            "IX50137",
+            "IX50142",
+            "IX50143",
+            "IX50145",
+            "IX50149",
+            "IX50151",
+            "IX50222",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 93,
+        "name": "Lənkəran Dövlət Universitetinin nəzdində Sosial və Aqrar-Texnoloji Kollec",
+        "ATIS_ID": "OT0130",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40006",
+            "IX40010",
+            "IX40013",
+            "IX40014",
+            "IX40015",
+            "IX40016",
+            "IX40017",
+            "IX40023",
+            "IX40034",
+            "IX40126",
+            "IX40128",
+            "IX40134"
+        ]
+    },
+    {
+        "id": 94,
+        "name": "Lənkəran Tibb Kolleci",
+        "ATIS_ID": "OT0133",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40142"
+        ]
+    },
+    {
+        "id": 128,
+        "name": "M.Topçubaşov adına Elmi Cərrahiyyə Mərkəzi",
+        "ATIS_ID": "AT0118",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 51,
+        "name": "M.V.Lomonosov adına Moskva Dövlət Universitetinin Bakı filialı",
+        "ATIS_ID": "AT0055",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50023",
+            "IX50031",
+            "IX50064",
+            "IX50067",
+            "IX50073",
+            "IX50075",
+            "IX50076"
+        ]
+    },
+    {
+        "id": 95,
+        "name": "Masallı Dövlət Regional Kolleci",
+        "ATIS_ID": "OT0138",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40010",
+            "IX40128",
+            "IX40130",
+            "IX40131",
+            "IX40134",
+            "IX40150",
+            "IX40152"
+        ]
+    },
+    {
+        "id": 129,
+        "name": "Məhkəmə Tibbi Ekspertiza və Patoloji Anatomiya Birliyi",
+        "ATIS_ID": "AT0121",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 137,
+        "name": "Mərkəzi Klinik Xəstəxana",
+        "ATIS_ID": "AT0137",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 154,
+        "name": "Mərkəzi Neftçilər Xəstəxanası",
+        "ATIS_ID": "AT0136",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 45,
+        "name": "Milli Aviasiya Akademiyası",
+        "ATIS_ID": "AT0045",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50034",
+            "IX50064",
+            "IX50067",
+            "IX50079",
+            "IX50097",
+            "IX50098",
+            "IX50106",
+            "IX50109",
+            "IX50110",
+            "IX50113",
+            "IX50122",
+            "IX50131",
+            "IX50137",
+            "IX50140",
+            "IX50158",
+            "IX50243",
+            "IX50245",
+            "IX50249",
+            "IX50250",
+            "IX50272"
+        ]
+    },
+    {
+        "id": 140,
+        "name": "Milli Hematologiya və Transfuziologiya Mərkəzi",
+        "ATIS_ID": "AT0211",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 127,
+        "name": "Milli Onkologiya Mərkəzi",
+        "ATIS_ID": "AT0117",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 27,
+        "name": "Mingəçevir Dövlət Universiteti",
+        "ATIS_ID": "AT0039",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50005",
+            "IX50006",
+            "IX50013",
+            "IX50018",
+            "IX50020",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50082",
+            "IX50131",
+            "IX50137",
+            "IX50139",
+            "IX50250",
+            "IX50274",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 97,
+        "name": "Mingəçevir Tibb Kolleci",
+        "ATIS_ID": "OT0095",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40141",
+            "IX40142",
+            "IX40144"
+        ]
+    },
+    {
+        "id": 98,
+        "name": "Mingəçevir Turizm Kolleci",
+        "ATIS_ID": "OT0096",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40015",
+            "IX40034",
+            "IX40046",
+            "IX40075",
+            "IX40149",
+            "IX40150",
+            "IX40151",
+            "IX40153"
+        ]
+    },
+    {
+        "id": 99,
+        "name": "Naxçıvan Dövlət Texniki Kolleci",
+        "ATIS_ID": "OT0064",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40037",
+            "IX40056",
+            "IX40059",
+            "IX40075",
+            "IX40076",
+            "IX40085",
+            "IX40130"
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Naxçıvan Dövlət Universiteti",
+        "ATIS_ID": "AT0034",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50007",
+            "IX50008",
+            "IX50009",
+            "IX50010",
+            "IX50011",
+            "IX50013",
+            "IX50015",
+            "IX50017",
+            "IX50024",
+            "IX50025",
+            "IX50026",
+            "IX50028",
+            "IX50034",
+            "IX50035",
+            "IX50037",
+            "IX50040",
+            "IX50042",
+            "IX50044",
+            "IX50045",
+            "IX50046",
+            "IX50050",
+            "IX50057",
+            "IX50062",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50070",
+            "IX50073",
+            "IX50075",
+            "IX50076",
+            "IX50077",
+            "IX50078",
+            "IX50115",
+            "IX50119",
+            "IX50122",
+            "IX50131",
+            "IX50137",
+            "IX50142",
+            "IX50145",
+            "IX50154",
+            "IX50160",
+            "IX50161",
+            "IX50167",
+            "IX50220",
+            "IX50250",
+            "IX50274",
+            "IX50303",
+            "IX50305",
+            "IX50307",
+            "IX60001",
+            "IX60155",
+            "IX60156"
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Naxçıvan Müəllimlər İnstitutu",
+        "ATIS_ID": "AT0040",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50008",
+            "IX50009",
+            "IX50010",
+            "IX50013",
+            "IX50016",
+            "IX50017",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50031",
+            "IX50037"
+        ]
+    },
+    {
+        "id": 100,
+        "name": "Naxçıvan Musiqi Kolleci",
+        "ATIS_ID": "OT0062",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40016",
+            "IX40017",
+            "IX40018",
+            "IX40019",
+            "IX40020",
+            "IX40021",
+            "IX40023",
+            "IX40024",
+            "IX40027",
+            "IX40028",
+            "IX40029"
+        ]
+    },
+    {
+        "id": 153,
+        "name": "Naxçıvan Muxtar Respublikası Ağız və Diş Sağlamlığı Mərkəzi",
+        "ATIS_ID": "AT0261",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 121,
+        "name": "Naxçıvan Muxtar Respublikası Daxili İşlər Nazirliyinin Orta İxtisas Polis Məktəbi",
+        "ATIS_ID": "OT0142",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40012"
+        ]
+    },
+    {
+        "id": 150,
+        "name": "Naxçıvan Muxtar Respublikası Perinatal Mərkəzi",
+        "ATIS_ID": "AT0264",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 149,
+        "name": "Naxçıvan Muxtar Respublikası Xəstəxanası",
+        "ATIS_ID": "AT0265",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 151,
+        "name": "Naxçıvan Muxtar Respublikası Yoluxucu Xəstəliklər Mərkəzi",
+        "ATIS_ID": "AT0263",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 152,
+        "name": "Naxçıvan Sağlamlıq Mərkəzi",
+        "ATIS_ID": "AT0262",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 101,
+        "name": "Naxçıvan Tibb Kolleci",
+        "ATIS_ID": "OT0063",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40137",
+            "IX40138",
+            "IX40140",
+            "IX40141",
+            "IX40142",
+            "IX40144",
+            "IX40146"
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Naxçıvan Universiteti",
+        "ATIS_ID": "AT0069",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50006",
+            "IX50013",
+            "IX50015",
+            "IX50023",
+            "IX50025",
+            "IX50035",
+            "IX50036",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50113",
+            "IX50137",
+            "IX50222",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 102,
+        "name": "Odlar Yurdu Kolleci",
+        "ATIS_ID": "OT0056",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40010",
+            "IX40033",
+            "IX40034",
+            "IX40035",
+            "IX40037",
+            "IX40042",
+            "IX40043",
+            "IX40091",
+            "IX40094",
+            "IX40149"
+        ]
+    },
+    {
+        "id": 122,
+        "name": "Orta Hərbi Tibb Məktəbi",
+        "ATIS_ID": "OT0055",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40137"
+        ]
+    },
+    {
+        "id": 139,
+        "name": "Psixi Sağlamlıq Mərkəzi",
+        "ATIS_ID": "AT0145",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 144,
+        "name": "Qarabağ Universiteti",
+        "ATIS_ID": "AT0259",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 103,
+        "name": "Qazax Dövlət Sosial-İqtisadi Kolleci",
+        "ATIS_ID": "OT0080",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40035",
+            "IX40037",
+            "IX40056",
+            "IX40080",
+            "IX40128",
+            "IX40129",
+            "IX40130",
+            "IX40131",
+            "IX40132",
+            "IX40134",
+            "IX40145"
+        ]
+    },
+    {
+        "id": 104,
+        "name": "Qərbi Kaspi Kolleci",
+        "ATIS_ID": "OT0060",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40033",
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40038",
+            "IX40042",
+            "IX40043",
+            "IX40060",
+            "IX40091",
+            "IX40092",
+            "IX40110",
+            "IX40126",
+            "IX40132",
+            "IX40134",
+            "IX40145",
+            "IX40150"
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Qərbi Kaspi Universiteti",
+        "ATIS_ID": "AT0066",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50023",
+            "IX50024",
+            "IX50025",
+            "IX50028",
+            "IX50030",
+            "IX50031",
+            "IX50033",
+            "IX50035",
+            "IX50060",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50070",
+            "IX50077",
+            "IX50082",
+            "IX50106",
+            "IX50111",
+            "IX50112",
+            "IX50113",
+            "IX50137",
+            "IX50149",
+            "IX50150",
+            "IX50160",
+            "IX50222",
+            "IX50257",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 105,
+        "name": "Quba Dövlət Sosial-İqtisadi Kolleci",
+        "ATIS_ID": "OT0139",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40003",
+            "IX40013",
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40128",
+            "IX40130",
+            "IX40131",
+            "IX40132",
+            "IX40150"
+        ]
+    },
+    {
+        "id": 106,
+        "name": "Quba Tibb Kolleci",
+        "ATIS_ID": "OT0140",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40138",
+            "IX40142"
+        ]
+    },
+    {
+        "id": 138,
+        "name": "Respublika Narkoloji Mərkəzi",
+        "ATIS_ID": "AT0141",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 156,
+        "name": "Respublika Neyrocərrahiyyə Xəstəxanasi",
+        "ATIS_ID": "AT0128",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 107,
+        "name": "Saatlı Tibb Kolleci",
+        "ATIS_ID": "OT0129",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40142"
+        ]
+    },
+    {
+        "id": 108,
+        "name": "Sabirabad Dövlət Sosial-İqtisadi Kolleci",
+        "ATIS_ID": "OT0127",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40013",
+            "IX40014",
+            "IX40034",
+            "IX40043",
+            "IX40090",
+            "IX40128",
+            "IX40130",
+            "IX40135"
+        ]
+    },
+    {
+        "id": 109,
+        "name": "Şamaxı Dövlət Regional Kolleci",
+        "ATIS_ID": "OT0093",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40004",
+            "IX40006",
+            "IX40008",
+            "IX40010",
+            "IX40013",
+            "IX40014",
+            "IX40016",
+            "IX40017",
+            "IX40020",
+            "IX40023",
+            "IX40034",
+            "IX40035",
+            "IX40036",
+            "IX40037",
+            "IX40042",
+            "IX40043",
+            "IX40056",
+            "IX40075",
+            "IX40080",
+            "IX40094",
+            "IX40119",
+            "IX40130",
+            "IX40132",
+            "IX40134",
+            "IX40145",
+            "IX40149"
+        ]
+    },
+    {
+        "id": 110,
+        "name": "Şəki Dövlət Regional Kolleci",
+        "ATIS_ID": "OT0103",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40006",
+            "IX40008",
+            "IX40010",
+            "IX40013",
+            "IX40014",
+            "IX40016",
+            "IX40017",
+            "IX40019",
+            "IX40020",
+            "IX40023",
+            "IX40134",
+            "IX40153"
+        ]
+    },
+    {
+        "id": 111,
+        "name": "Şəki Dövlət Texniki Kolleci",
+        "ATIS_ID": "OT0098",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40073",
+            "IX40075",
+            "IX40089",
+            "IX40149"
+        ]
+    },
+    {
+        "id": 112,
+        "name": "Şəki Tibb Kolleci",
+        "ATIS_ID": "OT0101",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40142"
+        ]
+    },
+    {
+        "id": 113,
+        "name": "Şirvan Dövlət İqtisadiyyat və Humanitar Kolleci",
+        "ATIS_ID": "OT0125",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40001",
+            "IX40002",
+            "IX40003",
+            "IX40006",
+            "IX40008",
+            "IX40010",
+            "IX40013",
+            "IX40034",
+            "IX40035",
+            "IX40089"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Sumqayıt Dövlət Universiteti",
+        "ATIS_ID": "AT0030",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50006",
+            "IX50007",
+            "IX50010",
+            "IX50011",
+            "IX50012",
+            "IX50013",
+            "IX50014",
+            "IX50015",
+            "IX50018",
+            "IX50020",
+            "IX50021",
+            "IX50023",
+            "IX50028",
+            "IX50030",
+            "IX50031",
+            "IX50032",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50073",
+            "IX50075",
+            "IX50076",
+            "IX50077",
+            "IX50082",
+            "IX50088",
+            "IX50110",
+            "IX50112",
+            "IX50113",
+            "IX50123",
+            "IX50131",
+            "IX50137",
+            "IX50140",
+            "IX50222",
+            "IX50249",
+            "IX50250"
+        ]
+    },
+    {
+        "id": 114,
+        "name": "Sumqayıt Dövlət Universitetinin nəzdində Sumqayıt Dövlət Texniki Kolleci",
+        "ATIS_ID": "OT0084",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40010",
+            "IX40034",
+            "IX40035",
+            "IX40056",
+            "IX40075",
+            "IX40091",
+            "IX40092",
+            "IX40108",
+            "IX40115",
+            "IX40126"
+        ]
+    },
+    {
+        "id": 141,
+        "name": "Sumqayıt Özəl Orta İxtisas Kolleci",
+        "ATIS_ID": "OT0088",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 116,
+        "name": "Sumqayıt Tibb Kolleci",
+        "ATIS_ID": "OT0089",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40136",
+            "IX40138",
+            "IX40141",
+            "IX40142"
+        ]
+    },
+    {
+        "id": 117,
+        "name": "Şuşa Humanitar Kolleci",
+        "ATIS_ID": "OT0107",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40008",
+            "IX40010",
+            "IX40013",
+            "IX40016",
+            "IX40017",
+            "IX40020",
+            "IX40023",
+            "IX40145"
+        ]
+    },
+    {
+        "id": 118,
+        "name": "Tovuz Dövlət Sosial-İqtisadi Kolleci",
+        "ATIS_ID": "OT0081",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40037",
+            "IX40056",
+            "IX40080",
+            "IX40115",
+            "IX40119",
+            "IX40120",
+            "IX40124",
+            "IX40126",
+            "IX40128",
+            "IX40130",
+            "IX40131",
+            "IX40135",
+            "IX40145",
+            "IX40147"
+        ]
+    },
+    {
+        "id": 143,
+        "name": "Türkiyə-Azərbaycan Universiteti",
+        "ATIS_ID": "AT0260",
+        "type": 2,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 12,
+        "name": "Üzeyir Hacıbəyli adına Bakı Musiqi Akademiyası",
+        "ATIS_ID": "AT0027",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50009",
+            "IX50042",
+            "IX50044",
+            "IX50045",
+            "IX50046",
+            "IX50215",
+            "IX50220"
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Xəzər Universiteti",
+        "ATIS_ID": "AT0064",
+        "type": 2,
+        "specialty_ATIS_ID": [
+            "IX50001",
+            "IX50003",
+            "IX50004",
+            "IX50005",
+            "IX50010",
+            "IX50011",
+            "IX50012",
+            "IX50013",
+            "IX50014",
+            "IX50015",
+            "IX50017",
+            "IX50018",
+            "IX50023",
+            "IX50025",
+            "IX50030",
+            "IX50031",
+            "IX50033",
+            "IX50035",
+            "IX50060",
+            "IX50062",
+            "IX50063",
+            "IX50064",
+            "IX50067",
+            "IX50068",
+            "IX50069",
+            "IX50081",
+            "IX50088",
+            "IX50109",
+            "IX50112",
+            "IX50113",
+            "IX50116",
+            "IX50123",
+            "IX50145",
+            "IX50303"
+        ]
+    },
+    {
+        "id": 148,
+        "name": "Yeni Klinika",
+        "ATIS_ID": "AT0266",
+        "type": 1,
+        "specialty_ATIS_ID": []
+    },
+    {
+        "id": 119,
+        "name": "Zaqatala Dövlət İdarəetmə və Texnologiya Kolleci",
+        "ATIS_ID": "OT0105",
+        "type": 1,
+        "specialty_ATIS_ID": [
+            "IX40034",
+            "IX40075",
+            "IX40085",
+            "IX40128",
+            "IX40130"
+        ]
+    }
+]
