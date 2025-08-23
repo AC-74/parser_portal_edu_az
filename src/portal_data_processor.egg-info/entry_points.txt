@@ -1,0 +1,2 @@
+[console_scripts]
+process-portal-data = portal_data_processor.cli:main

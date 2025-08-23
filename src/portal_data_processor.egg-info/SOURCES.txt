@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/portal_data_processor/__init__.py
+src/portal_data_processor/cli.py
+src/portal_data_processor/client.py
+src/portal_data_processor.egg-info/PKG-INFO
+src/portal_data_processor.egg-info/SOURCES.txt
+src/portal_data_processor.egg-info/dependency_links.txt
+src/portal_data_processor.egg-info/entry_points.txt
+src/portal_data_processor.egg-info/requires.txt
+src/portal_data_processor.egg-info/top_level.txt
