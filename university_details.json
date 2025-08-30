@@ -5,8 +5,8 @@
     "address": "AZ 1072, Bakı şəhəri, Fətəli xan Xoyski prospekti, 98.",
     "latitude": 40.400821,
     "longitude": 49.857729,
-    "description": "Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası (ADBTİA) 1930-cu ildə təsis edilmiş, idman sahəsində ixtisaslaşmış bir ali təhsil müəssisəsidir. Akademiya, tələbələrə nəzəri və praktiki biliklər verərək onları peşəkar idmançı, məşqçi, idman meneceri və sağlamlıq mütəxəssisi kimi hazırlayır.",
-    "photo_url": "images/placeholder.png"
+    "description": "Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası (ADBTİA) 1930-cu ildə təsis edilmiş, idman sahəsində ixtisaslaşmış bir ali təhsil müəssisəsidir. Akademiya, tələbələrə nəzəri və praktiki biliklər verərək onları peşəkar idmançı, məşqçi, idman meneceri və sağlamlık mütəxəssisi kimi hazırlayır.",
+    "photo_url": "images/AT0041.jpg"
   },
   {
     "ATIS_ID": "AT0036",
@@ -15,7 +15,7 @@
     "latitude": 40.697734,
     "longitude": 46.366813,
     "description": "Azərbaycan Texnologiya Universiteti (ATU) Gəncə şəhərində yerləşən ali təhsil müəssisəsidir. Universitet regionda qida, toxuculuq və yüngül sənaye, turizm, logistika, metallurgiya və İKT kimi sahələr üzrə yüksəkixtisaslı kadrlar hazırlayır.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0036.jpg"
   },
   {
     "ATIS_ID": "AT0020",
@@ -24,7 +24,7 @@
     "latitude": 40.379041,
     "longitude": 49.82026,
     "description": "Азербайджанский университет архитектуры и строительства (Azərbaycan Memarlıq və İnşaat Universiteti) — это государственный университет, расположенный в Баку, Азербайджан, специализирующийся на гражданском строительстве и архитектуре.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0020.jpg"
   },
   {
     "ATIS_ID": "AT0022",
@@ -33,7 +33,7 @@
     "latitude": 40.383691,
     "longitude": 49.842745,
     "description": "Азербайджанский университет языков (АУЯ) — это государственный университет, расположенный в Баку, Азербайджан. Он был основан в 1973 году как высшее учебное заведение, специализирующееся на обучении иностранным языкам.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0022.jpg"
   },
   {
     "ATIS_ID": "AT0001",
@@ -42,7 +42,7 @@
     "latitude": 40.377914,
     "longitude": 49.811574,
     "description": "Bakı Dövlət Universiteti (BDU) Azərbaycanın ilk ali təhsil müəssisəsidir. О, 1 sentyabr 1919-cu ildə Azərbaycan Xalq Cümhuriyyətinin parlamenti tərəfindən təsis edilmişdir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0001.jpg"
   },
   {
     "ATIS_ID": "AT0017",
@@ -51,7 +51,7 @@
     "latitude": 40.378264,
     "longitude": 49.848126,
     "description": "Azərbaycan Dövlət Neft və Sənaye Universiteti (ADNSU) Azərbaycanın ən qədim, ən böyük və nüfuzlu universitetlərindən biridir və 2020-ci ildə 100 illiyini qeyd etmişdir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0017.jpg"
   },
   {
     "ATIS_ID": "AT0005",
@@ -60,7 +60,7 @@
     "latitude": 40.365478,
     "longitude": 49.830977,
     "description": "Azərbaycan Dövlət İqtisad Universiteti (UNEC) 1930-cu ildə təsis edilmiş və Cənubi Qafqazın ən böyük ali təhsil müəssisələrindən biridir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0005.jpg"
   },
   {
     "ATIS_ID": "AT0044",
@@ -69,7 +69,7 @@
     "latitude": 40.385519,
     "longitude": 49.837517,
     "description": "Azərbaycan Tibb Universiteti (ATU) Azərbaycanda tibb təhsili sahəsində aparıcı ali təhsil müəssisəsidir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0044.webp"
   },
   {
     "ATIS_ID": "AT0045",
@@ -87,7 +87,7 @@
     "latitude": 40.385038,
     "longitude": 49.842691,
     "description": "Bakı Slavyan Universiteti (BSU) Azərbaycan Respublikası Təhsil Nazirliyinin tabeliyində olan dövlət ali təhsil müəssisəsidir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0023.jpg"
   },
   {
     "ATIS_ID": "AT0027",
@@ -96,7 +96,7 @@
     "latitude": 40.7683,
     "longitude": 47.0489,
     "description": "Mingəçevir Dövlət Universiteti Azərbaycan Respublikası Prezidentinin 24 iyul 2015-ci il tarixli 1335 nömrəli Sərəncamı ilə yaradılıb.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0027.jpg"
   },
   {
     "ATIS_ID": "AT0042",
@@ -105,7 +105,7 @@
     "latitude": 40.6751,
     "longitude": 46.355332,
     "description": "Azərbaycan Dövlət Aqrar Universiteti (ADAU) aqrar sektor üçün yüksək ixtisaslı kənd təsərrüfatı mütəxəssisləri hazırlayan Azərbaycan dövlət ali təhsil müəssisəsidir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0042.jpg"
   },
   {
     "ATIS_ID": "AT0019",
@@ -114,7 +114,7 @@
     "latitude": 40.383691,
     "longitude": 49.842745,
     "description": "Azərbaycan Texniki Universiteti (AzTU) — Azərbaycanın texniki sahədə ixtisaslaşmış ali təhsil müəssisəsidir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0019.jpg"
   },
   {
     "ATIS_ID": "AT0024",
@@ -123,7 +123,7 @@
     "latitude": 40.38,
     "longitude": 49.81,
     "description": "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti (ADMİU) 1923-cü ildə Bakı Teatr Məktəbinin bazasında yaradılmışdır. 1991-ci ildə университет statusu qazanmışdır. ADMİU, Azərbaycanda mədəniyyət və incəsənətin əksər sahələrində yüksək səviyyəli mütəxəssis hazırlayan, geniş yaradıcılıq imkanlarına və elmi-metodiki bazaya malik yeganə ali təhsil müəssisəsidir.",
-    "photo_url": "images/placeholder.png"
+    "photo_url": "images/AT0024.jpg"
   },
   {
     "ATIS_ID": "AT0048",
@@ -131,7 +131,7 @@
     "address": "Koroğlu Rəhimov küçəsi, 822/23, Bakı, Nərimanov, AZ1110.",
     "latitude": 40.2352,
     "longitude": 49.5126,
-    "description": "Azərbaycan Turizm və Menecment Universiteti (ATMU) Azərbaycan Respublikasında ali təhsilin bütün pillələrində turizm və menecment sahələri üzrə kadr hazırlığını həyata keçirən ali təhsil müəssisəsidir. Universitet 22 dekabr 2014-cü ildə Azərbaycan Respublikasının Prezidenti İlham Əliyevin sərəncamı ilə 2006-cı ildən fəaliyyət göstərən Azərbaycan Turizm İnstitutunun (ATİ) bazasında yaradılmışdır. ATMU Azərbaycan Respublikasının Dövlət Turizm Agentliyinin tabeliyində fəaliyyət göstərir və bakalavriatura, magistratura və doktorantura pillələrində, həmçinin əlavə təhsil proqramı üzrə tədris həyata keçirir.",
-    "photo_url": "images/placeholder.png"
+    "description": "Azərbaycan Turizm və Menecment Universiteti (ATMU) Azərbaycan Respublikasında ali təhsilin bütün pillələrində turizm və menecment sahələri üzrə kadr hazırlığını həyata keçirən ali təhsil müəssisəsidir. Universitet 22 dekabr 2014-cü ildə Azərbaycan Respublikasının Prezidenti İlham Əliyevin sərəncamı ilə 2006-cı ildən fəaliyyət göstərən Azərbaycan Turizm İnstitutunun (ATİ) bazasında yaradılmışdır. ATMU Azərbaycan Respublikasının Dövlət Turizm Agentliyinin tabeliyində fəaliyyət göstərir və bakalavriatura, magistratura və doktorantura pillələrində, həmçincə əlavə təhsil proqramı üzrə tədris həyata keçirir.",
+    "photo_url": "images/AT0048.jpg"
   }
 ]

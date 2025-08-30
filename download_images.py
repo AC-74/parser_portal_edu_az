@@ -24,33 +24,37 @@ def download_and_update_images(university_details_path, images_dir):
                     response = requests.get(photo_url, stream=True, timeout=10)
                     response.raise_for_status() # Raise an exception for HTTP errors (4xx or 5xx)
 
-                # Determine file extension
-                content_type = response.headers.get('Content-Type', '').lower()
-                if 'jpeg' in content_type or 'jpg' in content_type:
-                    ext = '.jpg'
-                elif 'png' in content_type:
-                    ext = '.png'
-                elif 'gif' in content_type:
-                    ext = '.gif'
-                elif 'webp' in content_type:
-                    ext = '.webp'
-                else:
-                    print(f"Warning: Unknown content type for {atis_id} ({content_type}). Skipping download.")
+                    # Determine file extension
+                    content_type = response.headers.get('Content-Type', '').lower()
+                    if 'jpeg' in content_type or 'jpg' in content_type:
+                        ext = '.jpg'
+                    elif 'png' in content_type:
+                        ext = '.png'
+                    elif 'gif' in content_type:
+                        ext = '.gif'
+                    elif 'webp' in content_type:
+                        ext = '.webp'
+                    else:
+                        print(f"Warning: Unknown content type for {atis_id} ({content_type}). Skipping download.")
+                        # Fallback to placeholder relative path
+                        uni['photo_url'] = os.path.relpath(os.path.join(images_dir, 'placeholder.png'), start=project_root).replace('\\', '/')
+                        updated_universities.append(uni)
+                        continue
+
+                    local_image_path = os.path.join(images_dir, f"{atis_id}{ext}")
+                    with open(local_image_path, 'wb') as out_file:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            out_file.write(chunk)
+                    print(f"Downloaded {atis_id} to {local_image_path}")
+                    # Update to local relative path with forward slashes
+                    uni['photo_url'] = os.path.relpath(local_image_path, start=project_root).replace('\\', '/')
+                except requests.exceptions.RequestException as e:
+                    print(f"Failed to download image for {atis_id} from {photo_url}: {e}")
                     # Fallback to placeholder relative path
                     uni['photo_url'] = os.path.relpath(os.path.join(images_dir, 'placeholder.png'), start=project_root).replace('\\', '/')
-                    updated_universities.append(uni)
-                    continue
-
-                local_image_path = os.path.join(images_dir, f"{atis_id}{ext}")
-                with open(local_image_path, 'wb') as out_file:
-                    for chunk in response.iter_content(chunk_size=8192):
-                        out_file.write(chunk)
-                print(f"Downloaded {atis_id} to {local_image_path}")
-                # Update to local relative path with forward slashes
-                uni['photo_url'] = os.path.relpath(local_image_path, start=project_root).replace('\\', '/')
-            except requests.exceptions.RequestException as e:
-                print(f"Failed to download image for {atis_id} from {photo_url}: {e}")
-                # Fallback to placeholder relative path
+            else:
+                # If it's not a web URL, it's already a local path or invalid, so use placeholder
+                print(f"Skipping download for {atis_id}: photo_url is not a web URL ({photo_url}). Using placeholder.")
                 uni['photo_url'] = os.path.relpath(os.path.join(images_dir, 'placeholder.png'), start=project_root).replace('\\', '/')
         else:
             print(f"No photo_url found for {atis_id}. Using placeholder.")

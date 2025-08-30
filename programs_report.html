@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог магистерских программ</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+        <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 1200px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; }
+        .university-card { background: #e9f5ff; border: 1px solid #cce7ff; border-radius: 8px; margin-bottom: 20px; padding: 15px; display: flex; flex-wrap: wrap; align-items: flex-start; }
+        .university-card img { max-width: 150px; height: auto; border-radius: 5px; margin-right: 15px; object-fit: contain; background-color: #fff; padding: 5px; border: 1px solid #ddd; }
+        .university-info { flex: 1; min-width: 250px; }
+        .university-info h3 { margin-top: 0; color: #0056b3; }
+        .university-info p { margin: 5px 0; font-size: 0.9em; }
+        .university-info a { color: #0056b3; text-decoration: none; }
+        .university-info a:hover { text-decoration: underline; }
+        .program-table-container { flex-basis: 100%; margin-top: 15px; overflow-x: auto; }
+        .program-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .program-table th, .program-table td { border: 1px solid #ddd; padding: 8px; text-align: left; font-size: 0.85em; }
+        .program-table th { background-color: #d9edf7; color: #31708f; }
+        .dataTables_wrapper .dataTables_filter { float: right; text-align: right; margin-bottom: 10px; }
+        .dataTables_wrapper .dataTables_length { float: left; margin-bottom: 10px; }
+        .dataTables_wrapper .dataTables_info { float: left; margin-top: 10px; }
+        .dataTables_wrapper .dataTables_paginate { float: right; margin-top: 10px; }
+        .filter-section { background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .filter-section label { margin-right: 10px; font-weight: bold; }
+        .filter-section input[type="number"], .filter-section select { padding: 8px; border-radius: 4px; border: 1px solid #ddd; margin-right: 10px; }
+        .filter-section button { padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .filter-section button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Каталог магистерских программ на русском языке</h1>
+        <p>Данные актуальны на: 30.08.2025</p>
+
+        <div class="filter-section">
+            <h2>Фильтры</h2>
+            <label for="minPrice">Мин. цена:</label>
+            <input type="number" id="minPrice" placeholder="0">
+            <label for="maxPrice">Макс. цена:</label>
+            <input type="number" id="maxPrice" placeholder="10000">
+            
+            <label for="minDistance">Мин. расстояние (км):</label>
+            <input type="number" id="minDistance" placeholder="0">
+            <label for="maxDistance">Макс. расстояние (км):</label>
+            <input type="number" id="maxDistance" placeholder="500">
+
+            <label for="specialtyFilter">Специальность:</label>
+            <select id="specialtyFilter">
+                <option value="">Все</option>
+                
+                    <option value="Архитектура (Memarlıq)">Архитектура (Memarlıq)</option>
+                
+                    <option value="Аэрокосмическая инженерия (Aerokosmik mühəndislik)">Аэрокосмическая инженерия (Aerokosmik mühəndislik)</option>
+                
+                    <option value="Биология (Biologiya)">Биология (Biologiya)</option>
+                
+                    <option value="Бухгалтерия (Mühasibat)">Бухгалтерия (Mühasibat)</option>
+                
+                    <option value="Виноделие (Şərabçılıq)">Виноделие (Şərabçılıq)</option>
+                
+                    <option value="Вокальное искусство (Vokal sənəti)">Вокальное искусство (Vokal sənəti)</option>
+                
+                    <option value="География (Coğrafiya)">География (Coğrafiya)</option>
+                
+                    <option value="Государственное и муниципальное управление (Dövlət və bələdiyyə idarəetməsi)">Государственное и муниципальное управление (Dövlət və bələdiyyə idarəetməsi)</option>
+                
+                    <option value="Дизайн (Dizayn)">Дизайн (Dizayn)</option>
+                
+                    <option value="Дирижирование (Dirijorluq)">Дирижирование (Dirijorluq)</option>
+                
+                    <option value="Журналистика (Jurnalistika)">Журналистика (Jurnalistika)</option>
+                
+                    <option value="Инженерия автоматизации процессов (Proseslərin avtomatlaşdırılması mühəndisliyi)">Инженерия автоматизации процессов (Proseslərin avtomatlaşdırılması mühəndisliyi)</option>
+                
+                    <option value="Инженерия безопасности жизнедеятельности (Həyat fəaliyyətinin təhlükəsizliyi mühəndisliyi)">Инженерия безопасности жизнедеятельности (Həyat fəaliyyətinin təhlükəsizliyi mühəndisliyi)</option>
+                
+                    <option value="Инженерия геологии и геофизики (Geologiya və geofizika mühəndisliyi)">Инженерия геологии и геофизики (Geologiya və geofizika mühəndisliyi)</option>
+                
+                    <option value="Инженерия коммуникационных систем (Kommunikasiya sistemləri mühəndisliyi)">Инженерия коммуникационных систем (Kommunikasiya sistemləri mühəndisliyi)</option>
+                
+                    <option value="Инженерия технологий широко используемых товаров (Çoxişlənən malların texnologiyası mühəndisliyi)">Инженерия технологий широко используемых товаров (Çoxişlənən malların texnologiyası mühəndisliyi)</option>
+                
+                    <option value="Инженерия технологических машин и оборудования (Texnoloji maşın və avadanlıqlar mühəndisliyi)">Инженерия технологических машин и оборудования (Texnoloji maşın və avadanlıqlar mühəndisliyi)</option>
+                
+                    <option value="Инженерия транспортного строительства (Nəqliyyat tikintisi mühəndisliyi)">Инженерия транспортного строительства (Nəqliyyat tikintisi mühəndisliyi)</option>
+                
+                    <option value="Инструментальное исполнительство (İnstrumental ifaçılıq)">Инструментальное исполнительство (İnstrumental ifaçılıq)</option>
+                
+                    <option value="Информационная безопасность (İnformasiya təhlükəsizliyi)">Информационная безопасность (İnformasiya təhlükəsizliyi)</option>
+                
+                    <option value="Информационные технологии (İnformasiya texnologiyaları)">Информационные технологии (İnformasiya texnologiyaları)</option>
+                
+                    <option value="Исполнительство популярной музыки и джаза (Populyar musiqi və caz ifaçılığı)">Исполнительство популярной музыки и джаза (Populyar musiqi və caz ifaçılığı)</option>
+                
+                    <option value="Композиторство (Bəstəkarlıq)">Композиторство (Bəstəkarlıq)</option>
+                
+                    <option value="Компьютерная инженерия (Kompüter mühəndisliyi)">Компьютерная инженерия (Kompüter mühəndisliyi)</option>
+                
+                    <option value="Компьютерные науки (Kompüter elmləri)">Компьютерные науки (Kompüter elmləri)</option>
+                
+                    <option value="Логистика и инженерия транспортных технологий (Logistika və nəqliyyat texnologiyaları mühəndisliyi)">Логистика и инженерия транспортных технологий (Logistika və nəqliyyat texnologiyaları mühəndisliyi)</option>
+                
+                    <option value="Маркетинг (Marketinq)">Маркетинг (Marketinq)</option>
+                
+                    <option value="Математика (Riyaziyyat)">Математика (Riyaziyyat)</option>
+                
+                    <option value="Машиностроение (Maşın mühəndisliyi)">Машиностроение (Maşın mühəndisliyi)</option>
+                
+                    <option value="Международные отношения (Beynəlxalq münasibətlər)">Международные отношения (Beynəlxalq münasibətlər)</option>
+                
+                    <option value="Мелиоративная инженерия (Meliorasiya mühəndisliyi)">Мелиоративная инженерия (Meliorasiya mühəndisliyi)</option>
+                
+                    <option value="Менеджмент (Menecment)">Менеджмент (Menecment)</option>
+                
+                    <option value="Металлургическая инженерия (Metallurgiya mühəndisliyi)">Металлургическая инженерия (Metallurgiya mühəndisliyi)</option>
+                
+                    <option value="Механическая инженерия (Mexanika mühəndisliyi)">Механическая инженерия (Mexanika mühəndisliyi)</option>
+                
+                    <option value="Музыковедение (Musiqişünaslıq)">Музыковедение (Musiqişünaslıq)</option>
+                
+                    <option value="Нефтегазовая инженерия (Neft-qaz mühəndisliyi)">Нефтегазовая инженерия (Neft-qaz mühəndisliyi)</option>
+                
+                    <option value="Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))">Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))</option>
+                
+                    <option value="Организация и управление промышленностью (Sənayenin təşkili və idarə edilməsi)">Организация и управление промышленностью (Sənayenin təşkili və idarə edilməsi)</option>
+                
+                    <option value="Педагогика (Pedaqogika)">Педагогика (Pedaqogika)</option>
+                
+                    <option value="Перевод (Tərcümə)">Перевод (Tərcümə)</option>
+                
+                    <option value="Пищевая инженерия (Qida mühəndisliyi)">Пищевая инженерия (Qida mühəndisliyi)</option>
+                
+                    <option value="Политология (Politologiya)">Политология (Politologiya)</option>
+                
+                    <option value="Почвоведение и агрохимия (Torpaqşünaslıq və aqrokimya)">Почвоведение и агрохимия (Torpaqşünaslıq və aqrokimya)</option>
+                
+                    <option value="Преподавание географии (Coğrafiya müəllimliyi)">Преподавание географии (Coğrafiya müəllimliyi)</option>
+                
+                    <option value="Преподавание иностранного языка (по языкам) (Xarici dil müəllimliyi (dillər üzrə))">Преподавание иностранного языка (по языкам) (Xarici dil müəllimliyi (dillər üzrə))</option>
+                
+                    <option value="Преподавание истории (Tarix müəllimliyi)">Преподавание истории (Tarix müəllimliyi)</option>
+                
+                    <option value="Преподавание языка и литературы (по языкам) (Dil və ədəbiyyat müəllimliyi (dillər üzrə))">Преподавание языка и литературы (по языкам) (Dil və ədəbiyyat müəllimliyi (dillər üzrə))</option>
+                
+                    <option value="Приборостроение (Cihaz mühəndisliyi)">Приборостроение (Cihaz mühəndisliyi)</option>
+                
+                    <option value="Психология (Psixologiya)">Психология (Psixologiya)</option>
+                
+                    <option value="Радиотехника и телекоммуникационная инженерия (Radiotexnika və telekommunikasiya mühəndisliyi)">Радиотехника и телекоммуникационная инженерия (Radiotexnika və telekommunikasiya mühəndisliyi)</option>
+                
+                    <option value="Регионоведение (Regionşünaslıq)">Регионоведение (Regionşünaslıq)</option>
+                
+                    <option value="Режиссура (Rejissorluq)">Режиссура (Rejissorluq)</option>
+                
+                    <option value="Сервис на транспорте (Nəqliyyatda servis)">Сервис на транспорте (Nəqliyyatda servis)</option>
+                
+                    <option value="Социальная работа (Sosial iş)">Социальная работа (Sosial iş)</option>
+                
+                    <option value="Социально-психологическая служба в образовании (Təhsildə sosial-psixoloji xidmət)">Социально-психологическая служба в образовании (Təhsildə sosial-psixoloji xidmət)</option>
+                
+                    <option value="Строительная инженерия (İnşaat mühəndisliyi)">Строительная инженерия (İnşaat mühəndisliyi)</option>
+                
+                    <option value="Тренерство (Məşqçilik)">Тренерство (Məşqçilik)</option>
+                
+                    <option value="Туризм и гостиничное дело (Turizm və otelçilik)">Туризм и гостиничное дело (Turizm və otelçilik)</option>
+                
+                    <option value="Управление бизнесом (Biznesin idarə edilməsi)">Управление бизнесом (Biznesin idarə edilməsi)</option>
+                
+                    <option value="Фармацевтика (Əczaçılıq)">Фармацевтика (Əczaçılıq)</option>
+                
+                    <option value="Физика (Fizika)">Физика (Fizika)</option>
+                
+                    <option value="Филология (Filologiya)">Филология (Filologiya)</option>
+                
+                    <option value="Финансы (Maliyyə)">Финансы (Maliyyə)</option>
+                
+                    <option value="Химическая инженерия (Kimya mühəndisliyi)">Химическая инженерия (Kimya mühəndisliyi)</option>
+                
+                    <option value="Химия (Kimya)">Химия (Kimya)</option>
+                
+                    <option value="Экологическая инженерия (Ekologiya mühəndisliyi)">Экологическая инженерия (Ekologiya mühəndisliyi)</option>
+                
+                    <option value="Экология (Ekologiya)">Экология (Ekologiya)</option>
+                
+                    <option value="Экономика (İqtisadiyyat)">Экономика (İqtisadiyyat)</option>
+                
+                    <option value="Экспертиза и маркетинг потребительских товаров (İstehlak mallarının ekspertizası və marketinqi)">Экспертиза и маркетинг потребительских товаров (İstehlak mallarının ekspertizası və marketinqi)</option>
+                
+                    <option value="Энергетическая инженерия (Energetika mühəndisliyi)">Энергетическая инженерия (Energetika mühəndisliyi)</option>
+                
+                    <option value="Юриспруденция (Hüquqşünaslıq)">Юриспруденция (Hüquqşünaslıq)</option>
+                
+            </select>
+            <button onclick="resetFilters()">Сбросить</button>
+        </div>
+
+        <div id="universityCardsContainer">
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="3.17">
+                
+                <img src="images/AT0001.jpg" 
+                     alt="Фото Бакинский государственный университет (Bakı Dövlət Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Бакинский государственный университет (Bakı Dövlət Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Бакинский государственный университет (БГУ) — первое высшее учебное заведение Азербайджана. Он был учрежден парламентом Азербайджанской Демократической Республики 1 сентября 1919 года.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Akademik Zahid Xəlilov küçəsi - 33, AZ 1148, Bakı şəhəri, AZ-1073/1, Azərbaycan Respublikası.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 3.17 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0001">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="2550.0" data-specialty="Биология (Biologiya)">
+                                <td>Биология (Biologiya)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="География (Coğrafiya)">
+                                <td>География (Coğrafiya)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Журналистика (Jurnalistika)">
+                                <td>Журналистика (Jurnalistika)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Математика (Riyaziyyat)">
+                                <td>Математика (Riyaziyyat)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Почвоведение и агрохимия (Torpaqşünaslıq və aqrokimya)">
+                                <td>Почвоведение и агрохимия (Torpaqşünaslıq və aqrokimya)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Туризм и гостиничное дело (Turizm və otelçilik)">
+                                <td>Туризм и гостиничное дело (Turizm və otelçilik)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Физика (Fizika)">
+                                <td>Физика (Fizika)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Филология (Filologiya)">
+                                <td>Филология (Filologiya)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Химия (Kimya)">
+                                <td>Химия (Kimya)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="2550.0" data-specialty="Экология (Ekologiya)">
+                                <td>Экология (Ekologiya)</td>
+                                <td>2550</td>
+                            </tr>
+                            
+                            <tr data-price="3400.0" data-specialty="Международные отношения (Beynəlxalq münasibətlər)">
+                                <td>Международные отношения (Beynəlxalq münasibətlər)</td>
+                                <td>3400</td>
+                            </tr>
+                            
+                            <tr data-price="3400.0" data-specialty="Психология (Psixologiya)">
+                                <td>Психология (Psixologiya)</td>
+                                <td>3400</td>
+                            </tr>
+                            
+                            <tr data-price="3400.0" data-specialty="Социальная работа (Sosial iş)">
+                                <td>Социальная работа (Sosial iş)</td>
+                                <td>3400</td>
+                            </tr>
+                            
+                            <tr data-price="3400.0" data-specialty="Социально-психологическая служба в образовании (Təhsildə sosial-psixoloji xidmət)">
+                                <td>Социально-психологическая служба в образовании (Təhsildə sosial-psixoloji xidmət)</td>
+                                <td>3400</td>
+                            </tr>
+                            
+                            <tr data-price="5950.0" data-specialty="Юриспруденция (Hüquqşünaslıq)">
+                                <td>Юриспруденция (Hüquqşünaslıq)</td>
+                                <td>5950</td>
+                            </tr>
+                            
+                            <tr data-price="inf" data-specialty="Политология (Politologiya)">
+                                <td>Политология (Politologiya)</td>
+                                <td>не указано</td>
+                            </tr>
+                            
+                            <tr data-price="inf" data-specialty="Преподавание географии (Coğrafiya müəllimliyi)">
+                                <td>Преподавание географии (Coğrafiya müəllimliyi)</td>
+                                <td>не указано</td>
+                            </tr>
+                            
+                            <tr data-price="inf" data-specialty="Преподавание истории (Tarix müəllimliyi)">
+                                <td>Преподавание истории (Tarix müəllimliyi)</td>
+                                <td>не указано</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="2.19">
+                
+                <img src="images/AT0005.jpg" 
+                     alt="Фото Азербайджанский государственный экономический университет (Azərbaycan Dövlət İqtisad Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский государственный экономический университет (Azərbaycan Dövlət İqtisad Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский государственный экономический университет (UNEC) был основан в 1930 году и является одним из крупнейших высших учебных заведений на Южном Кавказе.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> İstiqlaliyyət küçəsi, 6, Bakı, Səbail, AZ1001.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 2.19 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0005">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="2000.0" data-specialty="Пищевая инженерия (Qida mühəndisliyi)">
+                                <td>Пищевая инженерия (Qida mühəndisliyi)</td>
+                                <td>2000</td>
+                            </tr>
+                            
+                            <tr data-price="2200.0" data-specialty="Информационная безопасность (İnformasiya təhlükəsizliyi)">
+                                <td>Информационная безопасность (İnformasiya təhlükəsizliyi)</td>
+                                <td>2200</td>
+                            </tr>
+                            
+                            <tr data-price="2200.0" data-specialty="Информационные технологии (İnformasiya texnologiyaları)">
+                                <td>Информационные технологии (İnformasiya texnologiyaları)</td>
+                                <td>2200</td>
+                            </tr>
+                            
+                            <tr data-price="2200.0" data-specialty="Компьютерные науки (Kompüter elmləri)">
+                                <td>Компьютерные науки (Kompüter elmləri)</td>
+                                <td>2200</td>
+                            </tr>
+                            
+                            <tr data-price="2200.0" data-specialty="Маркетинг (Marketinq)">
+                                <td>Маркетинг (Marketinq)</td>
+                                <td>2200</td>
+                            </tr>
+                            
+                            <tr data-price="2300.0" data-specialty="Дизайн (Dizayn)">
+                                <td>Дизайн (Dizayn)</td>
+                                <td>2300</td>
+                            </tr>
+                            
+                            <tr data-price="2300.0" data-specialty="Менеджмент (Menecment)">
+                                <td>Менеджмент (Menecment)</td>
+                                <td>2300</td>
+                            </tr>
+                            
+                            <tr data-price="2300.0" data-specialty="Экономика (İqtisadiyyat)">
+                                <td>Экономика (İqtisadiyyat)</td>
+                                <td>2300</td>
+                            </tr>
+                            
+                            <tr data-price="2500.0" data-specialty="Бухгалтерия (Mühasibat)">
+                                <td>Бухгалтерия (Mühasibat)</td>
+                                <td>2500</td>
+                            </tr>
+                            
+                            <tr data-price="2500.0" data-specialty="Управление бизнесом (Biznesin idarə edilməsi)">
+                                <td>Управление бизнесом (Biznesin idarə edilməsi)</td>
+                                <td>2500</td>
+                            </tr>
+                            
+                            <tr data-price="2500.0" data-specialty="Финансы (Maliyyə)">
+                                <td>Финансы (Maliyyə)</td>
+                                <td>2500</td>
+                            </tr>
+                            
+                            <tr data-price="3700.0" data-specialty="Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))">
+                                <td>Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))</td>
+                                <td>3700</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="0.17">
+                
+                <img src="images/AT0017.jpg" 
+                     alt="Фото Азербайджанский государственный университет нефти и промышленности (Azərbaycan Dövlət Neft və Sənaye Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский государственный университет нефти и промышленности (Azərbaycan Dövlət Neft və Sənaye Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский государственный университет нефти и промышленности (АГУНП) — один из старейших, крупнейших и престижнейших университетов Азербайджана, отметивший в 2020 году свое 100-летие.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Bakı şəhəri, Azadlıq prospekti, 20, AZ1010.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 0.17 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0017">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="5100.0" data-specialty="Инженерия геологии и геофизики (Geologiya və geofizika mühəndisliyi)">
+                                <td>Инженерия геологии и геофизики (Geologiya və geofizika mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Информационные технологии (İnformasiya texnologiyaları)">
+                                <td>Информационные технологии (İnformasiya texnologiyaları)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Компьютерная инженерия (Kompüter mühəndisliyi)">
+                                <td>Компьютерная инженерия (Kompüter mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Нефтегазовая инженерия (Neft-qaz mühəndisliyi)">
+                                <td>Нефтегазовая инженерия (Neft-qaz mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Приборостроение (Cihaz mühəndisliyi)">
+                                <td>Приборостроение (Cihaz mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Химическая инженерия (Kimya mühəndisliyi)">
+                                <td>Химическая инженерия (Kimya mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Экологическая инженерия (Ekologiya mühəndisliyi)">
+                                <td>Экологическая инженерия (Ekologiya mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Энергетическая инженерия (Energetika mühəndisliyi)">
+                                <td>Энергетическая инженерия (Energetika mühəndisliyi)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="0.68">
+                
+                <img src="images/AT0019.jpg" 
+                     alt="Фото Azərbaycan Texniki Universiteti"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Azərbaycan Texniki Universiteti</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский технический университет (АзТУ) — высшее учебное заведение Азербайджана, специализирующееся в технической области.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Hüseyn Cavid prospekti 25, Bakı, AZ1073.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 0.68 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0019">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="3315.0" data-specialty="Информационная безопасность (İnformasiya təhlükəsizliyi)">
+                                <td>Информационная безопасность (İnformasiya təhlükəsizliyi)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Информационные технологии (İnformasiya texnologiyaları)">
+                                <td>Информационные технологии (İnformasiya texnologiyaları)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Компьютерная инженерия (Kompüter mühəndisliyi)">
+                                <td>Компьютерная инженерия (Kompüter mühəndisliyi)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Компьютерные науки (Kompüter elmləri)">
+                                <td>Компьютерные науки (Kompüter elmləri)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Машиностроение (Maşın mühəndisliyi)">
+                                <td>Машиностроение (Maşın mühəndisliyi)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Менеджмент (Menecment)">
+                                <td>Менеджмент (Menecment)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Механическая инженерия (Mexanika mühəndisliyi)">
+                                <td>Механическая инженерия (Mexanika mühəndisliyi)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                            <tr data-price="3315.0" data-specialty="Экономика (İqtisadiyyat)">
+                                <td>Экономика (İqtisadiyyat)</td>
+                                <td>3315</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="2.43">
+                
+                <img src="images/AT0020.jpg" 
+                     alt="Фото Азербайджанский университет архитектуры и строительства (Azərbaycan Memarlıq və İnşaat Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский университет архитектуры и строительства (Azərbaycan Memarlıq və İnşaat Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский университет архитектуры и строительства (Azərbaycan Memarlıq və İnşaat Universiteti) — это государственный университет, расположенный в Баку, Азербайджан, специализирующийся на гражданском строительстве и архитектуре.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Küçə Ayna Sultanova, 5, Bakı AZ1073, Azərbaycan.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 2.43 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0020">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="4250.0" data-specialty="Архитектура (Memarlıq)">
+                                <td>Архитектура (Memarlıq)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Дизайн (Dizayn)">
+                                <td>Дизайн (Dizayn)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Инженерия коммуникационных систем (Kommunikasiya sistemləri mühəndisliyi)">
+                                <td>Инженерия коммуникационных систем (Kommunikasiya sistemləri mühəndisliyi)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Инженерия транспортного строительства (Nəqliyyat tikintisi mühəndisliyi)">
+                                <td>Инженерия транспортного строительства (Nəqliyyat tikintisi mühəndisliyi)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Мелиоративная инженерия (Meliorasiya mühəndisliyi)">
+                                <td>Мелиоративная инженерия (Meliorasiya mühəndisliyi)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))">
+                                <td>Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Строительная инженерия (İnşaat mühəndisliyi)">
+                                <td>Строительная инженерия (İnşaat mühəndisliyi)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                            <tr data-price="4250.0" data-specialty="Экономика (İqtisadiyyat)">
+                                <td>Экономика (İqtisadiyyat)</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="0.68">
+                
+                <img src="images/AT0022.jpg" 
+                     alt="Фото Азербайджанский университет языков (Azərbaycan Dillər Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский университет языков (Azərbaycan Dillər Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский университет языков (АУЯ) — это государственный университет, расположенный в Баку, Азербайджан. Он был основан в 1973 году как высшее учебное заведение, специализирующееся на обучении иностранным языкам.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Bakı şəhəri, Rəşid Behbudov küçəsi, 134.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 0.68 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0022">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="5100.0" data-specialty="Перевод (Tərcümə)">
+                                <td>Перевод (Tərcümə)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Преподавание иностранного языка (по языкам) (Xarici dil müəllimliyi (dillər üzrə))">
+                                <td>Преподавание иностранного языка (по языкам) (Xarici dil müəllimliyi (dillər üzrə))</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Преподавание языка и литературы (по языкам) (Dil və ədəbiyyat müəllimliyi (dillər üzrə))">
+                                <td>Преподавание языка и литературы (по языкам) (Dil və ədəbiyyat müəllimliyi (dillər üzrə))</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Регионоведение (Regionşünaslıq)">
+                                <td>Регионоведение (Regionşünaslıq)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Филология (Filologiya)">
+                                <td>Филология (Filologiya)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="0.79">
+                
+                <img src="images/AT0023.jpg" 
+                     alt="Фото Бакинский славянский университет (Bakı Slavyan Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Бакинский славянский университет (Bakı Slavyan Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Бакинский славянский университет (БСУ) — государственное высшее учебное заведение, находящееся в ведении Министерства образования Азербайджанской Республики.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Süleyman Rüstəm küçəsi, 33, Bakı, Nəsimi, AZ1014.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 0.79 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0023">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="2200.0" data-specialty="Психология (Psixologiya)">
+                                <td>Психология (Psixologiya)</td>
+                                <td>2200</td>
+                            </tr>
+                            
+                            <tr data-price="2300.0" data-specialty="Педагогика (Pedaqogika)">
+                                <td>Педагогика (Pedaqogika)</td>
+                                <td>2300</td>
+                            </tr>
+                            
+                            <tr data-price="2500.0" data-specialty="Международные отношения (Beynəlxalq münasibətlər)">
+                                <td>Международные отношения (Beynəlxalq münasibətlər)</td>
+                                <td>2500</td>
+                            </tr>
+                            
+                            <tr data-price="2600.0" data-specialty="Филология (Filologiya)">
+                                <td>Филология (Filologiya)</td>
+                                <td>2600</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="3.29">
+                
+                <img src="images/AT0024.jpg" 
+                     alt="Фото Азербайджанский государственный университет культуры и искусств (Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский государственный университет культуры и искусств (Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti (ADMİU) 1923-cü ildə Bakı Teatr Məktəbinin bazasında yaradılmışdır. 1991-ci ildə университет statusu qazanmışdır. ADMİU, Azərbaycanda mədəniyyət və incəsənətin əksər sahələrində yüksək səviyyəli mütəxəssis hazırlayan, geniş yaradıcılıq imkanlarına və elmi-metodiki bazaya malik yeganə ali təhsil müəssisəsidir.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> İnşaatçılar prospekti 39, AZ1065, Bakı şəhəri, Yasamal.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 3.29 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0024">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="4250.0" data-specialty="Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))">
+                                <td>Организация и управление бизнесом (MBA) (Biznesin təşkili və idarə edilməsi (MBA))</td>
+                                <td>4250</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="240.39">
+                
+                <img src="images/AT0027.jpg" 
+                     alt="Фото Бакинская музыкальная академия имени Узеира Гаджибейли (Üzeyir Hacıbəyli adına Bakı Musiqi Akademiyası)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Бакинская музыкальная академия имени Узеира Гаджибейли (Üzeyir Hacıbəyli adına Bakı Musiqi Akademiyası)</h3>
+                    
+                        <p><strong>Описание:</strong> Мингечаурский государственный университет был создан Указом Президента Азербайджанской Республики № 1335 от 24 июля 2015 года.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> D.Əliyeva küçəsi, 21, Mingəçevir AZ4500, Azərbaycan Respublikası.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 240.39 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0027">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="4500.0" data-specialty="Вокальное искусство (Vokal sənəti)">
+                                <td>Вокальное искусство (Vokal sənəti)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                            <tr data-price="4500.0" data-specialty="Дирижирование (Dirijorluq)">
+                                <td>Дирижирование (Dirijorluq)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                            <tr data-price="4500.0" data-specialty="Инструментальное исполнительство (İnstrumental ifaçılıq)">
+                                <td>Инструментальное исполнительство (İnstrumental ifaçılıq)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                            <tr data-price="4500.0" data-specialty="Исполнительство популярной музыки и джаза (Populyar musiqi və caz ifaçılığı)">
+                                <td>Исполнительство популярной музыки и джаза (Populyar musiqi və caz ifaçılığı)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                            <tr data-price="4500.0" data-specialty="Композиторство (Bəstəkarlıq)">
+                                <td>Композиторство (Bəstəkarlıq)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                            <tr data-price="4500.0" data-specialty="Музыковедение (Musiqişünaslıq)">
+                                <td>Музыковедение (Musiqişünaslıq)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                            <tr data-price="4500.0" data-specialty="Режиссура (Rejissorluq)">
+                                <td>Режиссура (Rejissorluq)</td>
+                                <td>4500</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="296.35">
+                
+                <img src="images/AT0036.jpg" 
+                     alt="Фото Азербайджанский технологический университет (Azərbaycan Texnologiya Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский технологический университет (Azərbaycan Texnologiya Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский технологический университет (АТУ) — высшее учебное заведение, расположенное в городе Гянджа. Университет готовит высококвалифицированные кадры для таких областей региона, как пищевая, текстильная и легкая промышленность, туризм, логистика, металлургия и ИКТ.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Şah İsmayıl Xətai prospekti, 103, Gəncə, AZ2011.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 296.35 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0036">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="1300.0" data-specialty="Бухгалтерия (Mühasibat)">
+                                <td>Бухгалтерия (Mühasibat)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Виноделие (Şərabçılıq)">
+                                <td>Виноделие (Şərabçılıq)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Государственное и муниципальное управление (Dövlət və bələdiyyə idarəetməsi)">
+                                <td>Государственное и муниципальное управление (Dövlət və bələdiyyə idarəetməsi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Дизайн (Dizayn)">
+                                <td>Дизайн (Dizayn)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Инженерия автоматизации процессов (Proseslərin avtomatlaşdırılması mühəndisliyi)">
+                                <td>Инженерия автоматизации процессов (Proseslərin avtomatlaşdırılması mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Инженерия безопасности жизнедеятельности (Həyat fəaliyyətinin təhlükəsizliyi mühəndisliyi)">
+                                <td>Инженерия безопасности жизнедеятельности (Həyat fəaliyyətinin təhlükəsizliyi mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Инженерия технологий широко используемых товаров (Çoxişlənən malların texnologiyası mühəndisliyi)">
+                                <td>Инженерия технологий широко используемых товаров (Çoxişlənən malların texnologiyası mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Инженерия технологических машин и оборудования (Texnoloji maşın və avadanlıqlar mühəndisliyi)">
+                                <td>Инженерия технологических машин и оборудования (Texnoloji maşın və avadanlıqlar mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Информационные технологии (İnformasiya texnologiyaları)">
+                                <td>Информационные технологии (İnformasiya texnologiyaları)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Компьютерная инженерия (Kompüter mühəndisliyi)">
+                                <td>Компьютерная инженерия (Kompüter mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Маркетинг (Marketinq)">
+                                <td>Маркетинг (Marketinq)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Машиностроение (Maşın mühəndisliyi)">
+                                <td>Машиностроение (Maşın mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Менеджмент (Menecment)">
+                                <td>Менеджмент (Menecment)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Металлургическая инженерия (Metallurgiya mühəndisliyi)">
+                                <td>Металлургическая инженерия (Metallurgiya mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Организация и управление промышленностью (Sənayenin təşkili və idarə edilməsi)">
+                                <td>Организация и управление промышленностью (Sənayenin təşkili və idarə edilməsi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Пищевая инженерия (Qida mühəndisliyi)">
+                                <td>Пищевая инженерия (Qida mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Радиотехника и телекоммуникационная инженерия (Radiotexnika və telekommunikasiya mühəndisliyi)">
+                                <td>Радиотехника и телекоммуникационная инженерия (Radiotexnika və telekommunikasiya mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Сервис на транспорте (Nəqliyyatda servis)">
+                                <td>Сервис на транспорте (Nəqliyyatda servis)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Туризм и гостиничное дело (Turizm və otelçilik)">
+                                <td>Туризм и гостиничное дело (Turizm və otelçilik)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Управление бизнесом (Biznesin idarə edilməsi)">
+                                <td>Управление бизнесом (Biznesin idarə edilməsi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Химическая инженерия (Kimya mühəndisliyi)">
+                                <td>Химическая инженерия (Kimya mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Экологическая инженерия (Ekologiya mühəndisliyi)">
+                                <td>Экологическая инженерия (Ekologiya mühəndisliyi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Экономика (İqtisadiyyat)">
+                                <td>Экономика (İqtisadiyyat)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                            <tr data-price="1300.0" data-specialty="Экспертиза и маркетинг потребительских товаров (İstehlak mallarının ekspertizası və marketinqi)">
+                                <td>Экспертиза и маркетинг потребительских товаров (İstehlak mallarının ekspertizası və marketinqi)</td>
+                                <td>1300</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="2.46">
+                
+                <img src="images/AT0041.jpg" 
+                     alt="Фото Азербайджанская государственная академия физической культуры и спорта (Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанская государственная академия физической культуры и спорта (Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası)</h3>
+                    
+                        <p><strong>Описание:</strong> Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası (ADBTİA) 1930-cu ildə təsis edilmiş, idman sahəsində ixtisaslaşmış bir ali təhsil müəssisəsidir. Akademiya, tələbələrə nəzəri və praktiki biliklər verərək onları peşəkar idmançı, məşqçi, idman meneceri və sağlamlık mütəxəssisi kimi hazırlayır.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> AZ 1072, Bakı şəhəri, Fətəli xan Xoyski prospekti, 98.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 2.46 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0041">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="3500.0" data-specialty="Тренерство (Məşqçilik)">
+                                <td>Тренерство (Məşqçilik)</td>
+                                <td>3500</td>
+                            </tr>
+                            
+                            <tr data-price="5100.0" data-specialty="Менеджмент (Menecment)">
+                                <td>Менеджмент (Menecment)</td>
+                                <td>5100</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="1.16">
+                
+                <img src="images/AT0044.webp" 
+                     alt="Фото Азербайджанский медицинский университет (Azərbaycan Tibb Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский медицинский университет (Azərbaycan Tibb Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Азербайджанский медицинский университет (АМУ) — ведущее высшее учебное заведение в области медицинского образования в Азербайджане.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Səməd Vurğun küçəsi 165, AZ1022.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 1.16 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0044">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="11900.0" data-specialty="Биология (Biologiya)">
+                                <td>Биология (Biologiya)</td>
+                                <td>11900</td>
+                            </tr>
+                            
+                            <tr data-price="11900.0" data-specialty="Менеджмент (Menecment)">
+                                <td>Менеджмент (Menecment)</td>
+                                <td>11900</td>
+                            </tr>
+                            
+                            <tr data-price="11900.0" data-specialty="Психология (Psixologiya)">
+                                <td>Психология (Psixologiya)</td>
+                                <td>11900</td>
+                            </tr>
+                            
+                            <tr data-price="11900.0" data-specialty="Фармацевтика (Əczaçılıq)">
+                                <td>Фармацевтика (Əczaçılıq)</td>
+                                <td>11900</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="26.2">
+                
+                <img src="images/placeholder.png" 
+                     alt="Фото Национальная академия авиации (Milli Aviasiya Akademiyası)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Национальная академия авиации (Milli Aviasiya Akademiyası)</h3>
+                    
+                        <p><strong>Описание:</strong> Национальная академия авиации (НАА) является государственным высшим учебным заведением Азербайджанской Республики и входит в структуру Закрытого акционерного общества (ЗАО) 'Азербайджанские авиалинии'.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> AZ1045, Bakı şəhəri, Mərdəkan prospekti, 30.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 26.2 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0045">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="8000.0" data-specialty="Логистика и инженерия транспортных технологий (Logistika və nəqliyyat texnologiyaları mühəndisliyi)">
+                                <td>Логистика и инженерия транспортных технологий (Logistika və nəqliyyat texnologiyaları mühəndisliyi)</td>
+                                <td>8000</td>
+                            </tr>
+                            
+                            <tr data-price="8000.0" data-specialty="Менеджмент (Menecment)">
+                                <td>Менеджмент (Menecment)</td>
+                                <td>8000</td>
+                            </tr>
+                            
+                            <tr data-price="9000.0" data-specialty="Аэрокосмическая инженерия (Aerokosmik mühəndislik)">
+                                <td>Аэрокосмическая инженерия (Aerokosmik mühəndislik)</td>
+                                <td>9000</td>
+                            </tr>
+                            
+                            <tr data-price="9000.0" data-specialty="Юриспруденция (Hüquqşünaslıq)">
+                                <td>Юриспруденция (Hüquqşünaslıq)</td>
+                                <td>9000</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="university-card" 
+                 data-min-price="" 
+                 data-max-price=""
+                 data-specialties=""
+                 data-distance="32.73">
+                
+                <img src="images/AT0048.jpg" 
+                     alt="Фото Азербайджанский университет туризма и менеджмента (Azərbaycan Turizm və Menecment Universiteti)"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>Азербайджанский университет туризма и менеджмента (Azərbaycan Turizm və Menecment Universiteti)</h3>
+                    
+                        <p><strong>Описание:</strong> Azərbaycan Turizm və Menecment Universiteti (ATMU) Azərbaycan Respublikasında ali təhsilin bütün pillələrində turizm və menecment sahələri üzrə kadr hazırlığını həyata keçirən ali təhsil müəssisəsidir. Universitet 22 dekabr 2014-cü ildə Azərbaycan Respublikasının Prezidenti İlham Əliyevin sərəncamı ilə 2006-cı ildən fəaliyyət göstərən Azərbaycan Turizm İnstitutunun (ATİ) bazasında yaradılmışdır. ATMU Azərbaycan Respublikasının Dövlət Turizm Agentliyinin tabeliyində fəaliyyət göstərir və bakalavriatura, magistratura və doktorantura pillələrində, həmçincə əlavə təhsil proqramı üzrə tədris həyata keçirir.</p>
+                    
+                    
+                        <p><strong>Адрес:</strong> Koroğlu Rəhimov küçəsi, 822/23, Bakı, Nərimanov, AZ1110.</p>
+                    
+                    
+                        <p><strong>Расстояние от ст. 28 мая:</strong> 32.73 км</p>
+                    
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-AT0048">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr data-price="2200.0" data-specialty="Туризм и гостиничное дело (Turizm və otelçilik)">
+                                <td>Туризм и гостиничное дело (Turizm və otelçilik)</td>
+                                <td>2200</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Инициализация DataTables для каждой таблицы программ
+            $('.program-table').each(function() {
+                $(this).DataTable({
+                    "paging": false,
+                    "info": false,
+                    "searching": false,
+                    "order": [[2, 'asc']] // Сортировка по стоимости по умолчанию
+                });
+            });
+
+            // Динамическая фильтрация при вводе
+            $('#minPrice, #maxPrice, #minDistance, #maxDistance').on('input', applyFilters);
+            $('#specialtyFilter').on('change', applyFilters);
+        });
+
+        function applyFilters() {
+            var minPrice = parseFloat($('#minPrice').val()) || 0;
+            var maxPrice = parseFloat($('#maxPrice').val()) || Infinity;
+            var minDistance = parseFloat($('#minDistance').val()) || 0;
+            var maxDistance = parseFloat($('#maxDistance').val()) || Infinity;
+            var selectedSpecialty = $('#specialtyFilter').val();
+
+            $('.university-card').each(function() {
+                var card = $(this);
+                var cardDistance = parseFloat(card.data('distance'));
+                var showCard = false;
+
+                // Проверяем, соответствует ли карточка фильтру по расстоянию
+                var distanceMatch = (isNaN(cardDistance) && maxDistance === Infinity) || (cardDistance >= minDistance && cardDistance <= maxDistance);
+
+                // Проверяем каждую программу внутри карточки
+                card.find('.program-table tbody tr').each(function() {
+                    var row = $(this);
+                    var price = parseFloat(row.data('price'));
+                    // Убедимся, что цена является числом
+                    if (isNaN(price)) {
+                        price = 0; // или Infinity, в зависимости от того, как вы хотите обрабатывать "не указано"
+                    }
+                    var specialty = row.data('specialty');
+
+                    var priceMatch = (price >= minPrice && price <= maxPrice);
+                    var specialtyMatch = (selectedSpecialty === '' || specialty.includes(selectedSpecialty));
+
+                    if (priceMatch && specialtyMatch) {
+                        row.show();
+                        showCard = true; // Если хотя бы одна программа подходит, показываем карточку
+                    } else {
+                        row.hide();
+                    }
+                });
+
+                if (showCard && distanceMatch) {
+                    card.show();
+                } else {
+                    card.hide();
+                }
+            });
+        }
+
+        function resetFilters() {
+            $('#minPrice').val('');
+            $('#maxPrice').val('');
+            $('#minDistance').val('');
+            $('#maxDistance').val('');
+            $('#specialtyFilter').val('');
+            applyFilters(); // Применяем фильтры, чтобы сбросить вид
+        }
+    </script>
+</body>
+</html>
