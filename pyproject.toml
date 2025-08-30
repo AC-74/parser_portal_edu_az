@@ -12,7 +12,8 @@ requires-python = ">=3.9"
 dependencies = [
   "pandas>=2.1",
   "matplotlib>=3.8",
-  "haversine>=2.8.0"
+  "haversine>=2.8.0",
+  "Jinja2>=3.1.0"
 ]
 
 [project.scripts]

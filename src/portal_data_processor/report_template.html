@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог магистерских программ</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+        <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 1200px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #0056b3; }
+        .university-card { background: #e9f5ff; border: 1px solid #cce7ff; border-radius: 8px; margin-bottom: 20px; padding: 15px; display: flex; flex-wrap: wrap; align-items: flex-start; }
+        .university-card img { max-width: 150px; height: auto; border-radius: 5px; margin-right: 15px; object-fit: contain; background-color: #fff; padding: 5px; border: 1px solid #ddd; }
+        .university-info { flex: 1; min-width: 250px; }
+        .university-info h3 { margin-top: 0; color: #0056b3; }
+        .university-info p { margin: 5px 0; font-size: 0.9em; }
+        .university-info a { color: #0056b3; text-decoration: none; }
+        .university-info a:hover { text-decoration: underline; }
+        .program-table-container { flex-basis: 100%; margin-top: 15px; overflow-x: auto; }
+        .program-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .program-table th, .program-table td { border: 1px solid #ddd; padding: 8px; text-align: left; font-size: 0.85em; }
+        .program-table th { background-color: #d9edf7; color: #31708f; }
+        .dataTables_wrapper .dataTables_filter { float: right; text-align: right; margin-bottom: 10px; }
+        .dataTables_wrapper .dataTables_length { float: left; margin-bottom: 10px; }
+        .dataTables_wrapper .dataTables_info { float: left; margin-top: 10px; }
+        .dataTables_wrapper .dataTables_paginate { float: right; margin-top: 10px; }
+        .filter-section { background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .filter-section label { margin-right: 10px; font-weight: bold; }
+        .filter-section input[type="number"], .filter-section select { padding: 8px; border-radius: 4px; border: 1px solid #ddd; margin-right: 10px; }
+        .filter-section button { padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .filter-section button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Каталог магистерских программ на русском языке</h1>
+        <p>Данные актуальны на: {{ report_date }}</p>
+
+        <div class="filter-section">
+            <h2>Фильтры</h2>
+            <label for="minPrice">Мин. цена:</label>
+            <input type="number" id="minPrice" placeholder="0">
+            <label for="maxPrice">Макс. цена:</label>
+            <input type="number" id="maxPrice" placeholder="10000">
+            
+            <label for="minDistance">Мин. расстояние (км):</label>
+            <input type="number" id="minDistance" placeholder="0">
+            <label for="maxDistance">Макс. расстояние (км):</label>
+            <input type="number" id="maxDistance" placeholder="500">
+
+            <label for="specialtyFilter">Специальность:</label>
+            <select id="specialtyFilter">
+                <option value="">Все</option>
+                {% for specialty in all_specialties %}
+                    <option value="{{ specialty }}">{{ specialty }}</option>
+                {% endfor %}
+            </select>
+            <button onclick="resetFilters()">Сбросить</button>
+        </div>
+
+        <div id="universityCardsContainer">
+            {% for university_id, university_data in universities.items() %}
+            <div class="university-card" 
+                 data-min-price="{{ university_data.min_price }}" 
+                 data-max-price="{{ university_data.max_price }}"
+                 data-specialties="{{ university_data.specialties | join(',') }}"
+                 data-distance="{{ university_data.distance | default('inf') }}">
+                
+                <img src="{{ university_data.photo_url if university_data.photo_url else 'images/placeholder.png' }}" 
+                     alt="Фото {{ university_data.name }}"
+                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                
+                <div class="university-info">
+                    <h3>{{ university_data.name }}</h3>
+                    {% if university_data.description %}
+                        <p><strong>Описание:</strong> {{ university_data.description }}</p>
+                    {% endif %}
+                    {% if university_data.address %}
+                        <p><strong>Адрес:</strong> {{ university_data.address }}</p>
+                    {% endif %}
+                    {% if university_data.distance %}
+                        <p><strong>Расстояние от ст. 28 мая:</strong> {{ university_data.distance }} км</p>
+                    {% endif %}
+                </div>
+
+                <div class="program-table-container">
+                    <h4>Программы:</h4>
+                    <table class="program-table display compact" id="table-{{ university_id }}">
+                        <thead>
+                            <tr>
+                                <th>Специальность</th>
+                                <th>Стоимость (AZN)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for program in university_data.programs %}
+                            <tr data-price="{{ program.Tuition_Fee_Numeric }}" data-specialty="{{ program.Specialty }}">
+                                <td>{{ program.Specialty }}</td>
+                                <td>{{ program.Tuition_Fee }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Инициализация DataTables для каждой таблицы программ
+            $('.program-table').each(function() {
+                $(this).DataTable({
+                    "paging": false,
+                    "info": false,
+                    "searching": false,
+                    "order": [[2, 'asc']] // Сортировка по стоимости по умолчанию
+                });
+            });
+
+            // Динамическая фильтрация при вводе
+            $('#minPrice, #maxPrice, #minDistance, #maxDistance').on('input', applyFilters);
+            $('#specialtyFilter').on('change', applyFilters);
+        });
+
+        function applyFilters() {
+            var minPrice = parseFloat($('#minPrice').val()) || 0;
+            var maxPrice = parseFloat($('#maxPrice').val()) || Infinity;
+            var minDistance = parseFloat($('#minDistance').val()) || 0;
+            var maxDistance = parseFloat($('#maxDistance').val()) || Infinity;
+            var selectedSpecialty = $('#specialtyFilter').val();
+
+            $('.university-card').each(function() {
+                var card = $(this);
+                var cardDistance = parseFloat(card.data('distance'));
+                var showCard = false;
+
+                // Проверяем, соответствует ли карточка фильтру по расстоянию
+                var distanceMatch = (isNaN(cardDistance) && maxDistance === Infinity) || (cardDistance >= minDistance && cardDistance <= maxDistance);
+
+                // Проверяем каждую программу внутри карточки
+                card.find('.program-table tbody tr').each(function() {
+                    var row = $(this);
+                    var price = parseFloat(row.data('price'));
+                    // Убедимся, что цена является числом
+                    if (isNaN(price)) {
+                        price = 0; // или Infinity, в зависимости от того, как вы хотите обрабатывать "не указано"
+                    }
+                    var specialty = row.data('specialty');
+
+                    var priceMatch = (price >= minPrice && price <= maxPrice);
+                    var specialtyMatch = (selectedSpecialty === '' || specialty.includes(selectedSpecialty));
+
+                    if (priceMatch && specialtyMatch) {
+                        row.show();
+                        showCard = true; // Если хотя бы одна программа подходит, показываем карточку
+                    } else {
+                        row.hide();
+                    }
+                });
+
+                if (showCard && distanceMatch) {
+                    card.show();
+                } else {
+                    card.hide();
+                }
+            });
+        }
+
+        function resetFilters() {
+            $('#minPrice').val('');
+            $('#maxPrice').val('');
+            $('#minDistance').val('');
+            $('#maxDistance').val('');
+            $('#specialtyFilter').val('');
+            applyFilters(); // Применяем фильтры, чтобы сбросить вид
+        }
+    </script>
+</body>
+</html>
