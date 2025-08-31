@@ -29,6 +29,69 @@
         .filter-section input[type="number"], .filter-section select { padding: 8px; border-radius: 4px; border: 1px solid #ddd; margin-right: 10px; }
         .filter-section button { padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
         .filter-section button:hover { background-color: #0056b3; }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            padding-top: 60px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content, #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)}
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,9 +129,10 @@
                  data-specialties="{{ university_data.specialties | join(',') }}"
                  data-distance="{{ university_data.distance | default('inf') }}">
                 
-                <img src="{{ university_data.photo_url if university_data.photo_url else 'images/placeholder.png' }}" 
+                <img class="zoomable-image" src="{{ university_data.photo_url if university_data.photo_url else 'images/placeholder.png' }}" 
                      alt="Фото {{ university_data.name }}"
-                     onerror="this.onerror=null;this.src='images/placeholder.png';">
+                     onerror="this.onerror=null;this.src='images/placeholder.png';"
+                     onclick="openModal(this)">
                 
                 <div class="university-info">
                     <h3>{{ university_data.name }}</h3>
@@ -117,7 +181,7 @@
                     "paging": false,
                     "info": false,
                     "searching": false,
-                    "order": [[2, 'asc']] // Сортировка по стоимости по умолчанию
+                    "order": [[1, 'asc']] // Сортировка по стоимости по умолчанию
                 });
             });
 
@@ -178,6 +242,39 @@
             $('#specialtyFilter').val('');
             applyFilters(); // Применяем фильтры, чтобы сбросить вид
         }
+    // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function openModal(element) {
+            modal.style.display = "block";
+            modalImg.src = element.src;
+            captionText.innerHTML = element.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the image, close the modal
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 </body>
 </html>

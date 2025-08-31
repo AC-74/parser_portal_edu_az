@@ -2,7 +2,9 @@ import argparse
 from pathlib import Path
 from typing import List, Optional
 from datetime import datetime
-from urllib.parse import urlparse 
+import requests 
+import base64 
+from urllib.parse import urlparse
 
 import pandas as pd
 from jinja2 import Environment, FileSystemLoader
@@ -11,6 +13,69 @@ from .client import process_and_enrich_data, get_all_specialties
 
 # Константа для локального файла-заполнителя
 PLACEHOLDER_IMAGE = "images/placeholder.png"
+
+def get_image_as_base64(url: str) -> str:
+    """
+    Загружает изображение по URL или локальному пути и возвращает его в виде строки Base64 Data URI.
+    В случае ошибки возвращает путь к локальному заполнителю.
+    """
+    if not url:
+        return PLACEHOLDER_IMAGE
+
+    # Check if it's a local file path
+    if not url.startswith('http://') and not url.startswith('https://'):
+        local_path = Path(url)
+        if local_path.exists():
+            try:
+                with open(local_path, 'rb') as f:
+                    content = f.read()
+                encoded_string = base64.b64encode(content).decode('utf-8')
+                # Determine content type based on extension
+                if local_path.suffix.lower() == '.jpg' or local_path.suffix.lower() == '.jpeg':
+                    content_type = 'image/jpeg'
+                elif local_path.suffix.lower() == '.png':
+                    content_type = 'image/png'
+                elif local_path.suffix.lower() == '.gif':
+                    content_type = 'image/gif'
+                elif local_path.suffix.lower() == '.webp':
+                    content_type = 'image/webp'
+                else:
+                    content_type = 'application/octet-stream' # Generic binary
+                return f"data:{content_type};base64,{encoded_string}"
+            except Exception as e:
+                print(f"Ошибка чтения локального файла {url}: {e}")
+                return PLACEHOLDER_IMAGE
+        else:
+            print(f"Локальный файл не найден: {url}")
+            return PLACEHOLDER_IMAGE
+
+    # If it's a web URL
+    try:
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Referer': f"{urlparse(url).scheme}://{urlparse(url).netloc}/"
+        }
+
+        print(f"Загрузка изображения: {url}")
+        response = requests.get(url, stream=True, headers=headers, allow_redirects=True, timeout=20)
+        response.raise_for_status()
+
+        content = response.content
+        if not content:
+            print(f"Предупреждение: Пустой ответ от {url}")
+            return PLACEHOLDER_IMAGE
+
+        encoded_string = base64.b64encode(content).decode('utf-8')
+        content_type = response.headers.get('content-type', 'image/jpeg')
+
+        return f"data:{content_type};base64,{encoded_string}"
+
+    except requests.exceptions.RequestException as e:
+        print(f"Ошибка загрузки изображения {url}: {e}")
+        return PLACEHOLDER_IMAGE
 
 def generate_html_report(df: pd.DataFrame, output_path: Path):
     template_dir = Path(__file__).parent
@@ -24,9 +89,8 @@ def generate_html_report(df: pd.DataFrame, output_path: Path):
     for uni_id, group in df.groupby("University_ATIS_ID"):
         first_row = group.iloc[0]
 
-        # Используем Photo_URL напрямую, так как он уже должен быть локальным путем
-        photo_url_for_template = first_row["Photo_URL"]
-
+        # Скачиваем и кодируем фото ОДИН раз для каждого университета
+        photo_data_uri = get_image_as_base64(first_row["Photo_URL"])
 
         universities_data[uni_id] = {
             "name": first_row["University"],
@@ -34,7 +98,7 @@ def generate_html_report(df: pd.DataFrame, output_path: Path):
             "address": first_row["Address"],
             "latitude": first_row["Latitude"],
             "longitude": first_row["Longitude"],
-            "photo_url": photo_url_for_template,
+            "photo_url": photo_data_uri,
             "distance": first_row["distance"],
             "programs": []
         }
