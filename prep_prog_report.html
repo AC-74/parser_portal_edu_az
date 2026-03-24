@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёт: Программы подготовки на русском языке</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .price-group {
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .price-group h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .price-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+        }
+        
+        .programs-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .program-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .program-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            border-left-color: #764ba2;
+        }
+        
+        .program-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            gap: 20px;
+        }
+        
+        .program-title {
+            flex: 1;
+        }
+        
+        .program-title h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        
+        .program-code {
+            color: #666;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .program-prices {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .price-tag {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .price-tag.tuition {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        
+        .program-details {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .detail-icon {
+            color: #667eea;
+        }
+        
+        .university-name {
+            font-weight: 600;
+            color: #764ba2;
+        }
+        
+        .top-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .top-section h2 {
+            color: #d84315;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .highlight {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-header {
+                flex-direction: column;
+            }
+            
+            .program-prices {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Программы подготовки на русском языке</h1>
+            <p>Актуальные данные от 12.12.2025</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Всего программ</div>
+                <div class="stat-value">55</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Минимальная стоимость</div>
+                <div class="stat-value">1,000 ₼</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Максимальная стоимость</div>
+                <div class="stat-value">3,400 ₼</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Средняя стоимость</div>
+                <div class="stat-value">2,186 ₼</div>
+            </div>
+        </div>
+        
+        <div class="content">
+
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; border-radius: 15px; margin-bottom: 40px; color: white;">
+                <h2 style="color: white; margin-bottom: 20px; font-size: 2em;">🎯 Специальность 60213 (History and theory of international relations)</h2>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">History and theory of international relations</strong><br>
+                    🏛️ <strong>Naxçıvan Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>Не указано</strong> | Обучение: <strong>2,500 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003206
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Naxçıvan Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>2,500 AZN</strong> | Обучение: <strong>2,500 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Azərbaycan Dillər Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>1,700 AZN</strong> | Обучение: <strong>5,100 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">World politics</strong><br>
+                    🏛️ <strong>Azərbaycan Dillər Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>1,700 AZN</strong> | Обучение: <strong>5,100 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003203
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">History and theory of international relations</strong><br>
+                    🏛️ <strong>Azərbaycan Dillər Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>1,700 AZN</strong> | Обучение: <strong>5,100 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003206
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Bakı Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>2,550 AZN</strong> | Обучение: <strong>3,400 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Bakı Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Русский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>2,550 AZN</strong> | Обучение: <strong>3,400 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Bakı Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Английский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>3,400 AZN</strong> | Обучение: <strong>0 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;"> Müasir dövrdə Yaxın və Orta Şərq ölkələrinin xarici siyasəti</strong><br>
+                    🏛️ <strong>Bakı Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>2,550 AZN</strong> | Обучение: <strong>3,400 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003202
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;"> Müasir dövrdə Yaxın və Orta Şərq ölkələrinin xarici siyasəti</strong><br>
+                    🏛️ <strong>Bakı Dövlət Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Английский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>2,550 AZN</strong> | Обучение: <strong>3,400 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003202
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Bakı Slavyan Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Азербайджанский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | Обучение: <strong>2,500 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Bakı Slavyan Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Русский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | Обучение: <strong>2,500 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+                <div style="background: rgba(255,255,255,0.95); color: #333; padding: 20px; border-radius: 10px; margin: 10px 0;">
+                    <strong style="font-size: 1.2em;">International relations and diplomacy</strong><br>
+                    🏛️ <strong>Bakı Slavyan Universiteti</strong><br>
+                    🌐 Язык обучения: <strong>Английский</strong> | 📖 Очная<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | Обучение: <strong>2,500 AZN</strong><br>
+                    📋 Код: 60213 | ID: IX6003201
+                </div>
+
+            </div>
+
+            <div class="top-section">
+                <h2>🏆 ТОП-10 самых дешёвых программ подготовки</h2>
+
+                <div class="highlight">
+                    <strong>#1. International relations and diplomacy</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,500 AZN<br>
+                    📋 Код: 60213
+                </div>
+
+                <div class="highlight">
+                    <strong>#2. Teaching of Languages and Literature</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,100 AZN<br>
+                    📋 Код: 7001001
+                </div>
+
+                <div class="highlight">
+                    <strong>#3. Primary Education</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,300 AZN<br>
+                    📋 Код: 7001001
+                </div>
+
+                <div class="highlight">
+                    <strong>#4. Literary studies (by countries and fields)</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,600 AZN<br>
+                    📋 Код: 60201
+                </div>
+
+                <div class="highlight">
+                    <strong>#5. Development and Education of Preschool-Age Children</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,100 AZN<br>
+                    📋 Код: 7001001
+                </div>
+
+                <div class="highlight">
+                    <strong>#6. Theory and History of Education</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,200 AZN<br>
+                    📋 Код: 7001001
+                </div>
+
+                <div class="highlight">
+                    <strong>#7. Educational Psychology</strong><br>
+                    🏛️ Bakı Slavyan Universiteti<br>
+                    💰 Подготовка: <strong>1,000 AZN</strong> | 
+                    Обучение: 2,200 AZN<br>
+                    📋 Код: 7002013
+                </div>
+
+                <div class="highlight">
+                    <strong>#8. Linguistics (by languages and fields)</strong><br>
+                    🏛️ Azərbaycan Dillər Universiteti<br>
+                    💰 Подготовка: <strong>1,700 AZN</strong> | 
+                    Обучение: 5,100 AZN<br>
+                    📋 Код: 60201
+                </div>
+
+                <div class="highlight">
+                    <strong>#9. Regional Studies (by regions)</strong><br>
+                    🏛️ Azərbaycan Dillər Universiteti<br>
+                    💰 Подготовка: <strong>1,700 AZN</strong> | 
+                    Обучение: 5,100 AZN<br>
+                    📋 Код: 60211
+                </div>
+
+                <div class="highlight">
+                    <strong>#10. Approaches and methodology in language and literature teaching</strong><br>
+                    🏛️ Azərbaycan Dillər Universiteti<br>
+                    💰 Подготовка: <strong>1,700 AZN</strong> | 
+                    Обучение: 5,100 AZN<br>
+                    📋 Код: 60102
+                </div>
+
+            </div>
+
+            <h2 style="margin-bottom: 30px; color: #333;">Все программы по стоимости</h2>
+
+            <div class="price-group">
+                <h2>
+                    <span class="price-badge">1,000 AZN</span>
+                    <span style="font-weight: normal; font-size: 0.7em; color: #666;">(7 программ)</span>
+                </h2>
+                <div class="programs-grid">
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>International relations and diplomacy</h3>
+                                <div class="program-code">Код: 60213 | ID: IX6003201</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,500 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Teaching of Languages and Literature</h3>
+                                <div class="program-code">Код: 7001001 | ID: IX6001909</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Primary Education</h3>
+                                <div class="program-code">Код: 7001001 | ID: IX6001923</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,300 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Literary studies (by countries and fields)</h3>
+                                <div class="program-code">Код: 60201 | ID: IX6002001</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,600 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Development and Education of Preschool-Age Children</h3>
+                                <div class="program-code">Код: 7001001 | ID: IX6001932</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Theory and History of Education</h3>
+                                <div class="program-code">Код: 7001001 | ID: IX6001933</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,200 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Educational Psychology</h3>
+                                <div class="program-code">Код: 7002013 | ID: IX6002812</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,000 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,200 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Slavyan Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="price-group">
+                <h2>
+                    <span class="price-badge">1,700 AZN</span>
+                    <span style="font-weight: normal; font-size: 0.7em; color: #666;">(6 программ)</span>
+                </h2>
+                <div class="programs-grid">
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Linguistics (by languages and fields)</h3>
+                                <div class="program-code">Код: 60201 | ID: IX6002004</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,700 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Dillər Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Regional Studies (by regions)</h3>
+                                <div class="program-code">Код: 60211 | ID: IX6003001</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,700 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Dillər Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Approaches and methodology in language and literature teaching</h3>
+                                <div class="program-code">Код: 60102 | ID: IX6000201</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,700 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Dillər Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Translation (by languages)</h3>
+                                <div class="program-code">Код: 60203 | ID: IX6002201</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,700 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Dillər Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Country Studies (by countries)</h3>
+                                <div class="program-code">Код: 60211 | ID: IX6003002</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,700 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Dillər Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Approaches and methodology in foreign languages teaching</h3>
+                                <div class="program-code">Код: 60103 | ID: IX6000301</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,700 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,100 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Dillər Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="price-group">
+                <h2>
+                    <span class="price-badge">1,870 AZN</span>
+                    <span style="font-weight: normal; font-size: 0.7em; color: #666;">(11 программ)</span>
+                </h2>
+                <div class="programs-grid">
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Computer modeling</h3>
+                                <div class="program-code">Код: 60509 | ID: IX6007704</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Mechanical engineering technology</h3>
+                                <div class="program-code">Код: 60612 | ID: IX6009001</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Computer technologies in mechanical engineering</h3>
+                                <div class="program-code">Код: 60612 | ID: IX6009002</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Hydromechanics and hydraulic machines</h3>
+                                <div class="program-code">Код: 60630 | ID: IX6010801</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>International Economics</h3>
+                                <div class="program-code">Код: 7004005 | ID: IX6006027</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Healthcare Management</h3>
+                                <div class="program-code">Код: 7004008 | ID: IX6006327</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Computer Modeling</h3>
+                                <div class="program-code">Код: 7005009 | ID: IX6007724</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Digital transformation</h3>
+                                <div class="program-code">Код: 7006016 | ID: IX6011018</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Computer systems and networks</h3>
+                                <div class="program-code">Код: 7006022 | ID: IX6010912</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Design technology of computer equipment</h3>
+                                <div class="program-code">Код: 7006022 | ID: IX6010916</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Information security of telecommunication systems</h3>
+                                <div class="program-code">Код: 60627 | ID: IX6010513</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 1,870 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,315 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Azərbaycan Texniki Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="price-group">
+                <h2>
+                    <span class="price-badge">2,550 AZN</span>
+                    <span style="font-weight: normal; font-size: 0.7em; color: #666;">(27 программ)</span>
+                </h2>
+                <div class="programs-grid">
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>International relations and diplomacy</h3>
+                                <div class="program-code">Код: 60213 | ID: IX6003201</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,400 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>International Journalism</h3>
+                                <div class="program-code">Код: 60204 | ID: IX6002302</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Approaches and methodology in Physics teaching</h3>
+                                <div class="program-code">Код: 60104 | ID: IX6000401</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Physics of semiconductors</h3>
+                                <div class="program-code">Код: 60503 | ID: IX6007103</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Approaches and methodology in Mathematics teaching</h3>
+                                <div class="program-code">Код: 60105 | ID: IX6000501</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Approaches and methodology in Chemistry teaching</h3>
+                                <div class="program-code">Код: 60110 | ID: IX6001001</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Theory and history of pedagogy</h3>
+                                <div class="program-code">Код: 60119 | ID: IX6001901</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>History of philosophy</h3>
+                                <div class="program-code">Код: 60202 | ID: IX6002101</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Social philosophy</h3>
+                                <div class="program-code">Код: 60202 | ID: IX6002102</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Theory of journalism</h3>
+                                <div class="program-code">Код: 60204 | ID: IX6002304</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Ancient world history</h3>
+                                <div class="program-code">Код: 60206 | ID: IX6002503</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>New and newest history of Azerbaijan</h3>
+                                <div class="program-code">Код: 60206 | ID: IX6002510</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>History of Slavic countries</h3>
+                                <div class="program-code">Код: 60206 | ID: IX6002512</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>History of Caucasian peoples</h3>
+                                <div class="program-code">Код: 60206 | ID: IX6002513</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Regional Studies (by regions)</h3>
+                                <div class="program-code">Код: 60211 | ID: IX6003001</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>International economic relations</h3>
+                                <div class="program-code">Код: 60401 | ID: IX6005701</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,400 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Customs business</h3>
+                                <div class="program-code">Код: 60401 | ID: IX6005702</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,400 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Socio-psychological service in education</h3>
+                                <div class="program-code">Код: 60118 | ID: IX6001801</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 3,400 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3> Cinayət hüququ, cinayət prosesi, kriminalistika və məhkəmə ekspertizası</h3>
+                                <div class="program-code">Код: 60212 | ID: IX6003104</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,950 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Civil and economic law</h3>
+                                <div class="program-code">Код: 60212 | ID: IX6003105</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,950 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>International law</h3>
+                                <div class="program-code">Код: 60212 | ID: IX6003102</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,950 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Biotechnology</h3>
+                                <div class="program-code">Код: 60505 | ID: IX6007319</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Molecular biology</h3>
+                                <div class="program-code">Код: 60505 | ID: IX6007301</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Biochemistry</h3>
+                                <div class="program-code">Код: 60505 | ID: IX6007302</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Mathematical analysis</h3>
+                                <div class="program-code">Код: 60501 | ID: IX6006901</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 2,550 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Transnational criminal law</h3>
+                                <div class="program-code">Код: 60212 | ID: IX6003111</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,950 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Labor law: Social Security Law</h3>
+                                <div class="program-code">Код: 60212 | ID: IX6003116</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 2,550 ₼</div>
+                                <div class="price-tag tuition">Обучение: 5,950 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="price-group">
+                <h2>
+                    <span class="price-badge">3,400 AZN</span>
+                    <span style="font-weight: normal; font-size: 0.7em; color: #666;">(4 программ)</span>
+                </h2>
+                <div class="programs-grid">
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Psychology of child and age</h3>
+                                <div class="program-code">Код: 60209 | ID: IX6002807</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 3,400 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Social Psychology</h3>
+                                <div class="program-code">Код: 60209 | ID: IX6002802</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 3,400 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Clinical (Medical) Psychology</h3>
+                                <div class="program-code">Код: 60209 | ID: IX6002803</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 3,400 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-header">
+                            <div class="program-title">
+                                <h3>Sociology of management</h3>
+                                <div class="program-code">Код: 60210 | ID: IX6002902</div>
+                            </div>
+                            <div class="program-prices">
+                                <div class="price-tag">Подготовка: 3,400 ₼</div>
+                                <div class="price-tag tuition">Обучение: 0 ₼</div>
+                            </div>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span class="university-name">Bakı Dövlət Universiteti</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📖</span>
+                                <span>Очная</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <footer>
+            <p>Данные источника: foreigner_specialities2.json</p>
+            <p>Отчёт создан: 12.12.2025 17:17:35</p>
+            <p>Всего найдено программ на русском языке с указанной стоимостью подготовки: 55</p>
+        </footer>
+    </div>
+</body>
+</html>
